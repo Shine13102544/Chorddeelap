@@ -651,9 +651,9 @@ function getMasterBus() {
                 const AudioContextClass = window.AudioContext || window.webkitAudioContext;
                 audioCtx = new AudioContextClass();
             }
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
+          if (audioCtx && audioCtx.state === 'suspended') {
+    audioCtx.resume();
+}
         }
 
        function routeAudioOutput(sourceGain, time, pan) {
