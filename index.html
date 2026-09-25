@@ -11,27 +11,145 @@
 
 <body class="bg-slate-50 text-[#4A5568] antialiased selection:bg-[#DD6B20] selection:text-white min-h-screen flex flex-col justify-between">
 
-    <!-- Navbar -->
-    <nav class="glass-nav fixed top-0 w-full z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" onclick="showPage('home')" class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-[#DD6B20] rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-sm">C</div>
-                <span class="font-bold text-xl tracking-tight text-[#4A5568]">CHORD<span class="text-[#DD6B20]">DEELAP</span></span>
-            </a>
-            
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-[#4A5568]">
-                <button onclick="showPage('home')" id="nav-home" class="text-[#DD6B20] font-semibold transition-colors">หน้าแรก</button>
-                <a href="#popular-songs" onclick="showPage('home')" class="hover:text-[#DD6B20] transition-colors">เพลงยอดนิยม</a>
-                <button onclick="showPage('rhythm')" id="nav-rhythm" class="hover:text-[#DD6B20] transition-colors">คลังจังหวะกลอง</button>
-                <button onclick="showPage('drumpad')" id="nav-drumpad" class="hover:text-[#DD6B20] transition-colors">Drum Pad</button>
+   <!-- Navbar -->
+<nav class="glass-nav fixed top-0 w-full z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+
+        <!-- Logo -->
+        <a href="#" onclick="showPage('home'); closeMobileMenu()" 
+           class="flex items-center gap-2 min-w-0 shrink-0">
+
+            <div class="w-8 h-8 bg-[#DD6B20] rounded-lg flex items-center justify-center 
+                        text-white font-bold text-lg shadow-sm shrink-0">
+                C
             </div>
 
-            <div class="flex items-center gap-3">
-                <button class="text-sm font-medium px-4 py-2 rounded-full text-[#4A5568] hover:bg-slate-100 transition-all">เข้าสู่ระบบ</button>
-                <button class="text-sm font-medium px-4 py-2 rounded-full bg-[#DD6B20] text-white hover:bg-[#c05621] transition-all shadow-sm">สมัครสมาชิก</button>
-            </div>
+            <span class="font-bold text-base sm:text-xl tracking-tight text-[#4A5568] truncate">
+                CHORD<span class="text-[#DD6B20]">DEELAP</span>
+            </span>
+        </a>
+
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-5 lg:gap-8 text-sm font-medium text-[#4A5568]">
+
+            <button onclick="showPage('home')" 
+                    id="nav-home"
+                    class="text-[#DD6B20] font-semibold transition-colors whitespace-nowrap">
+                หน้าแรก
+            </button>
+
+            <a href="#popular-songs" 
+               onclick="showPage('home')" 
+               class="hover:text-[#DD6B20] transition-colors whitespace-nowrap">
+                เพลงยอดนิยม
+            </a>
+
+            <button onclick="showPage('rhythm')" 
+                    id="nav-rhythm"
+                    class="hover:text-[#DD6B20] transition-colors whitespace-nowrap">
+                คลังจังหวะกลอง
+            </button>
+
+            <button onclick="showPage('drumpad')" 
+                    id="nav-drumpad"
+                    class="hover:text-[#DD6B20] transition-colors whitespace-nowrap">
+                Drum Pad
+            </button>
+
         </div>
-    </nav>
+
+
+        <!-- Desktop Account Buttons -->
+        <div class="hidden sm:flex items-center gap-2 lg:gap-3 shrink-0">
+
+            <button class="text-xs sm:text-sm font-medium px-3 sm:px-4 py-2 
+                           rounded-full text-[#4A5568] hover:bg-slate-100 transition-all whitespace-nowrap">
+                เข้าสู่ระบบ
+            </button>
+
+            <button class="text-xs sm:text-sm font-medium px-3 sm:px-4 py-2 
+                           rounded-full bg-[#DD6B20] text-white hover:bg-[#c05621] 
+                           transition-all shadow-sm whitespace-nowrap">
+                สมัครสมาชิก
+            </button>
+
+        </div>
+
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn"
+                onclick="toggleMobileMenu()"
+                aria-label="เปิดเมนู"
+                aria-expanded="false"
+                class="md:hidden w-10 h-10 shrink-0 rounded-xl 
+                       flex items-center justify-center
+                       bg-slate-100 hover:bg-slate-200
+                       text-[#4A5568] transition-all">
+
+            <svg id="mobileMenuIcon"
+                 class="w-6 h-6"
+                 fill="none"
+                 stroke="currentColor"
+                 viewBox="0 0 24 24">
+
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+
+        </button>
+
+    </div>
+
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+         class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl shadow-lg">
+
+        <div class="px-4 py-4 space-y-2">
+
+            <button onclick="mobileNavigate('home')"
+                    class="mobile-nav-btn">
+                🏠 หน้าแรก
+            </button>
+
+            <button onclick="mobileNavigate('home', 'popular-songs')"
+                    class="mobile-nav-btn">
+                🎵 เพลงยอดนิยม
+            </button>
+
+            <button onclick="mobileNavigate('rhythm')"
+                    class="mobile-nav-btn">
+                🥁 คลังจังหวะกลอง
+            </button>
+
+            <button onclick="mobileNavigate('drumpad')"
+                    class="mobile-nav-btn">
+                🎛️ Drum Pad
+            </button>
+
+
+            <div class="border-t border-slate-200 pt-3 mt-3 grid grid-cols-2 gap-2">
+
+                <button class="px-3 py-2.5 rounded-xl bg-slate-100 
+                               text-sm font-medium text-[#4A5568]">
+                    เข้าสู่ระบบ
+                </button>
+
+                <button class="px-3 py-2.5 rounded-xl bg-[#DD6B20] 
+                               text-sm font-medium text-white shadow-sm">
+                    สมัครสมาชิก
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
     
     <!-- ========================================== -->
     <!-- 1. HOME PAGE VIEW                          -->
@@ -2564,6 +2682,101 @@ function getMasterBus() {
             renderPatternGrid();
             renderSongGrid(songs);
         });
+        // ==========================================
+// MOBILE NAVIGATION
+// ==========================================
+
+function toggleMobileMenu() {
+
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('mobileMenuBtn');
+    const icon = document.getElementById('mobileMenuIcon');
+
+    if (!menu || !btn) return;
+
+    const isHidden = menu.classList.contains('hidden');
+
+    if (isHidden) {
+
+        menu.classList.remove('hidden');
+
+        btn.setAttribute('aria-expanded', 'true');
+
+        if (icon) {
+            icon.innerHTML = `
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"/>
+            `;
+        }
+
+    } else {
+
+        closeMobileMenu();
+
+    }
+}
+
+
+function closeMobileMenu() {
+
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('mobileMenuBtn');
+    const icon = document.getElementById('mobileMenuIcon');
+
+    if (menu) {
+        menu.classList.add('hidden');
+    }
+
+    if (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (icon) {
+        icon.innerHTML = `
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+        `;
+    }
+}
+
+
+function mobileNavigate(page, anchor = null) {
+
+    showPage(page);
+
+    closeMobileMenu();
+
+    if (anchor) {
+
+        setTimeout(() => {
+
+            const target = document.getElementById(anchor);
+
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+        }, 100);
+
+    }
+}
+
+
+// ปิดเมนูเมื่อกลับไปใช้ Desktop
+window.addEventListener('resize', () => {
+
+    if (window.innerWidth >= 768) {
+        closeMobileMenu();
+    }
+
+});
     </script>
 </body>
 </html>
