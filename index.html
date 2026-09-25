@@ -1562,7 +1562,7 @@ function getMasterBus() {
             name: `FX ${i + 1}`,
             icon: '🔊',
             fileName: null,
-            defaultFile: `Fx/BANK FX${i + 1}.wav` // ไฟล์เสียงเริ่มต้นที่จะพยายามโหลดให้อัตโนมัติ
+            defaultFile: `Fx_sound/BANK FX${i + 1}.wav` // ไฟล์เสียงเริ่มต้นที่จะพยายามโหลดให้อัตโนมัติ
         }));
         const soundFxBuffers = {}; // key: slot.id -> AudioBuffer ที่ decode แล้ว
         let selectedFxSlotId = null; // ช่องที่ถูกเลือกล่าสุด (ใช้ตอนกดปุ่ม "แก้ไขจังหวะที่เลือก")
