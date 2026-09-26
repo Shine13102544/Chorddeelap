@@ -528,15 +528,18 @@ function getMasterBus() {
         let timerId = null;
         let nextNoteTime = 0.0;
 
-        function initAudio() {
-            if (!audioCtx) {
-                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-                audioCtx = new AudioContextClass();
-            }
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
-        }
+async function initAudio() {
+    if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContextClass();
+    }
+
+    if (audioCtx.state === 'suspended') {
+        await audioCtx.resume();
+    }
+
+    return audioCtx;
+}
 
      function routeAudioOutput(sourceGain, time, pan) {
     if (audioCtx.createStereoPanner) {
@@ -873,7 +876,7 @@ function getMasterBus() {
         }
 
         async function playPadSound(index) {
-            initAudio();
+           await initAudio();
             const config = drumConfigs[index];
             if (!config || !config.file) return;
 
@@ -897,7 +900,9 @@ function getMasterBus() {
                     routeAudioOutput(gainNode, now, config.pan);
                     source.start(now);
                 }
-            } catch (e) {}
+            } catch (e) {
+    console.error('❌ playPadSound error:', e);
+}
         }
 
         const keyMap = {
