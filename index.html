@@ -11,145 +11,27 @@
 
 <body class="bg-slate-50 text-[#4A5568] antialiased selection:bg-[#DD6B20] selection:text-white min-h-screen flex flex-col justify-between">
 
-   <!-- Navbar -->
-<nav class="glass-nav fixed top-0 w-full z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
-
-        <!-- Logo -->
-        <a href="#" onclick="showPage('home'); closeMobileMenu()" 
-           class="flex items-center gap-2 min-w-0 shrink-0">
-
-            <div class="w-8 h-8 bg-[#DD6B20] rounded-lg flex items-center justify-center 
-                        text-white font-bold text-lg shadow-sm shrink-0">
-                C
-            </div>
-
-            <span class="font-bold text-base sm:text-xl tracking-tight text-[#4A5568] truncate">
-                CHORD<span class="text-[#DD6B20]">DEELAP</span>
-            </span>
-        </a>
-
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center gap-5 lg:gap-8 text-sm font-medium text-[#4A5568]">
-
-            <button onclick="showPage('home')" 
-                    id="nav-home"
-                    class="text-[#DD6B20] font-semibold transition-colors whitespace-nowrap">
-                หน้าแรก
-            </button>
-
-            <a href="#popular-songs" 
-               onclick="showPage('home')" 
-               class="hover:text-[#DD6B20] transition-colors whitespace-nowrap">
-                เพลงยอดนิยม
+    <!-- Navbar -->
+    <nav class="glass-nav fixed top-0 w-full z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" onclick="showPage('home')" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-[#DD6B20] rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-sm">C</div>
+                <span class="font-bold text-xl tracking-tight text-[#4A5568]">CHORD<span class="text-[#DD6B20]">DEELAP</span></span>
             </a>
-
-            <button onclick="showPage('rhythm')" 
-                    id="nav-rhythm"
-                    class="hover:text-[#DD6B20] transition-colors whitespace-nowrap">
-                คลังจังหวะกลอง
-            </button>
-
-            <button onclick="showPage('drumpad')" 
-                    id="nav-drumpad"
-                    class="hover:text-[#DD6B20] transition-colors whitespace-nowrap">
-                Drum Pad
-            </button>
-
-        </div>
-
-
-        <!-- Desktop Account Buttons -->
-        <div class="hidden sm:flex items-center gap-2 lg:gap-3 shrink-0">
-
-            <button class="text-xs sm:text-sm font-medium px-3 sm:px-4 py-2 
-                           rounded-full text-[#4A5568] hover:bg-slate-100 transition-all whitespace-nowrap">
-                เข้าสู่ระบบ
-            </button>
-
-            <button class="text-xs sm:text-sm font-medium px-3 sm:px-4 py-2 
-                           rounded-full bg-[#DD6B20] text-white hover:bg-[#c05621] 
-                           transition-all shadow-sm whitespace-nowrap">
-                สมัครสมาชิก
-            </button>
-
-        </div>
-
-
-        <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn"
-                onclick="toggleMobileMenu()"
-                aria-label="เปิดเมนู"
-                aria-expanded="false"
-                class="md:hidden w-10 h-10 shrink-0 rounded-xl 
-                       flex items-center justify-center
-                       bg-slate-100 hover:bg-slate-200
-                       text-[#4A5568] transition-all">
-
-            <svg id="mobileMenuIcon"
-                 class="w-6 h-6"
-                 fill="none"
-                 stroke="currentColor"
-                 viewBox="0 0 24 24">
-
-                <path stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-
-        </button>
-
-    </div>
-
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-         class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl shadow-lg">
-
-        <div class="px-4 py-4 space-y-2">
-
-            <button onclick="mobileNavigate('home')"
-                    class="mobile-nav-btn">
-                🏠 หน้าแรก
-            </button>
-
-            <button onclick="mobileNavigate('home', 'popular-songs')"
-                    class="mobile-nav-btn">
-                🎵 เพลงยอดนิยม
-            </button>
-
-            <button onclick="mobileNavigate('rhythm')"
-                    class="mobile-nav-btn">
-                🥁 คลังจังหวะกลอง
-            </button>
-
-            <button onclick="mobileNavigate('drumpad')"
-                    class="mobile-nav-btn">
-                🎛️ Drum Pad
-            </button>
-
-
-            <div class="border-t border-slate-200 pt-3 mt-3 grid grid-cols-2 gap-2">
-
-                <button class="px-3 py-2.5 rounded-xl bg-slate-100 
-                               text-sm font-medium text-[#4A5568]">
-                    เข้าสู่ระบบ
-                </button>
-
-                <button class="px-3 py-2.5 rounded-xl bg-[#DD6B20] 
-                               text-sm font-medium text-white shadow-sm">
-                    สมัครสมาชิก
-                </button>
-
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-[#4A5568]">
+                <button onclick="showPage('home')" id="nav-home" class="text-[#DD6B20] font-semibold transition-colors">หน้าแรก</button>
+                <a href="#popular-songs" onclick="showPage('home')" class="hover:text-[#DD6B20] transition-colors">เพลงยอดนิยม</a>
+                <button onclick="showPage('rhythm')" id="nav-rhythm" class="hover:text-[#DD6B20] transition-colors">คลังจังหวะกลอง</button>
+                <button onclick="showPage('drumpad')" id="nav-drumpad" class="hover:text-[#DD6B20] transition-colors">Drum Pad</button>
             </div>
 
+            <div class="flex items-center gap-3">
+                <button class="text-sm font-medium px-4 py-2 rounded-full text-[#4A5568] hover:bg-slate-100 transition-all">เข้าสู่ระบบ</button>
+                <button class="text-sm font-medium px-4 py-2 rounded-full bg-[#DD6B20] text-white hover:bg-[#c05621] transition-all shadow-sm">สมัครสมาชิก</button>
+            </div>
         </div>
-
-    </div>
-
-</nav>
+    </nav>
     
     <!-- ========================================== -->
     <!-- 1. HOME PAGE VIEW                          -->
@@ -624,7 +506,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-       // 2. Audio Context Management
+        // 2. Audio Context Management
         let audioCtx = null;
         let masterCompressor = null;
 
@@ -651,12 +533,12 @@ function getMasterBus() {
                 const AudioContextClass = window.AudioContext || window.webkitAudioContext;
                 audioCtx = new AudioContextClass();
             }
-          if (audioCtx && audioCtx.state === 'suspended') {
-    audioCtx.resume();
-}
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
         }
 
-       function routeAudioOutput(sourceGain, time, pan) {
+     function routeAudioOutput(sourceGain, time, pan) {
     if (audioCtx.createStereoPanner) {
         const panner = audioCtx.createStereoPanner();
         panner.pan.setValueAtTime(pan, time);
@@ -666,6 +548,56 @@ function getMasterBus() {
         sourceGain.connect(getMasterBus()); // เดิม: audioCtx.destination
     }
 }
+        // 3. Mini Backing Player
+        function playKick(time, vol = 1, pan = 0) {
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.frequency.setValueAtTime(130, time);
+                osc.frequency.exponentialRampToValueAtTime(0.01, time + 0.15);
+                gain.gain.setValueAtTime(vol, time);
+                gain.gain.exponentialRampToValueAtTime(0.01, time + 0.15);
+                osc.connect(gain);
+                routeAudioOutput(gain, time, pan);
+                osc.start(time); osc.stop(time + 0.15);
+            } catch(e) {}
+        }
+
+        function playSnare(time, vol = 1, pan = 0) {
+            try {
+                const bufferSize = audioCtx.sampleRate * 0.15;
+                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const output = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) output[i] = Math.random() * 2 - 1;
+
+                const noise = audioCtx.createBufferSource();
+                noise.buffer = buffer;
+                const gain = audioCtx.createGain();
+                gain.gain.setValueAtTime(0.7 * vol, time);
+                gain.gain.exponentialRampToValueAtTime(0.01, time + 0.15);
+                noise.connect(gain);
+                routeAudioOutput(gain, time, pan);
+                noise.start(time); noise.stop(time + 0.15);
+            } catch(e) {}
+        }
+
+        function playHiHat(time, vol = 1, pan = 0) {
+            try {
+                const bufferSize = audioCtx.sampleRate * 0.04;
+                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const output = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) output[i] = Math.random() * 2 - 1;
+
+                const noise = audioCtx.createBufferSource();
+                noise.buffer = buffer;
+                const gain = audioCtx.createGain();
+                gain.gain.setValueAtTime(0.3 * vol, time);
+                gain.gain.exponentialRampToValueAtTime(0.01, time + 0.04);
+                noise.connect(gain);
+                routeAudioOutput(gain, time, pan);
+                noise.start(time); noise.stop(time + 0.04);
+            } catch(e) {}
+        }
 
         // 3b. Percussion Synthesis (Conga / Bongo / Tambourine / Cowbell / Closed Snare)
         // ไม่มีไฟล์ตัวอย่างเสียงเพอร์คัสชันจริงในโปรเจกต์ และไม่สามารถดาวน์โหลดไฟล์เสียงจากอินเทอร์เน็ตทั่วไปได้
@@ -893,21 +825,21 @@ function getMasterBus() {
 
         // 4. Drum Pad Config
         const defaultDrumConfigs = [
-            { key: 'Q', name: 'OverHL', vol: 1.0, pan: 0, icon: '📀', file: 'sounds/OVER H1.wav' },
-            { key: 'W', name: 'Slap', vol: 0.9, pan: 0, icon: '🪇', file: 'sounds/OTHER1.wav' },
-            { key: 'E', name: 'Clash', vol: 0.7, pan: -0.3, icon: '💥', file: 'sounds/OVERH3.wav' },
-            { key: 'R', name: 'Ride', vol: 0.8, pan: -0.3, icon: '💿', file: 'sounds/RIDE1.wav' },
-            { key: 'T', name: 'OverHR', vol: 0.8, pan: 0.2, icon: '📀', file: 'sounds/OVER H2.wav' },
-            { key: 'A', name: 'Tom High', vol: 0.9, pan: -0.5, icon: '🪘', file: 'sounds/TOM1.wav' },
-            { key: 'S', name: 'Tom Mid', vol: 0.9, pan: 0, icon: '🪘', file: 'sounds/TOM2.wav' },
-            { key: 'D', name: 'Tom Low', vol: 0.9, pan: 0.5, icon: '🪘', file: 'sounds/FLOOR TOM.wav' },
-            { key: 'F', name: 'Hid-Hat', vol: 0.8, pan: -0.7, icon: '🔔', file: 'sounds/HIHAT2.wav' },
-            { key: 'G', name: 'Open-Hat', vol: 0.8, pan: 0.7, icon: '🔔', file: 'sounds/HIHAT3.wav' },
-            { key: 'Z', name: 'Kick', vol: 0.7, pan: -0.1, icon: '🥁', file: 'sounds/KICK.wav' },
-            { key: 'X', name: 'Snare', vol: 0.7, pan: 0.3, icon: '🔔', file: 'sounds/Snare.wav' },
-            { key: 'C', name: 'Rimshot', vol: 0.7, pan: 0.4, icon: '🥢', file: 'sounds/Snare sot.wav' },
-            { key: 'V', name: 'Cowbell', vol: 0.6, pan: -0.4, icon: '👏', file: 'sounds/RIDE2.wav' },
-            { key: 'B', name: 'Hi-Hat Close', vol: 0.8, pan: 0.5, icon: '🔔', file: 'sounds/HIHAT1.wav' }        
+            { key: 'Q', name: 'Kick', vol: 1.0, pan: 0, icon: '🥁', file: 'sounds/KICK.wav' },
+            { key: 'W', name: 'Snare', vol: 0.9, pan: 0, icon: '🪘', file: 'sounds/Snare.wav' },
+            { key: 'E', name: 'Hi-Hat Close', vol: 0.7, pan: -0.3, icon: '💥', file: 'sounds/Snare sot.wav' },
+            { key: 'R', name: 'Hi-Hat Open', vol: 0.8, pan: -0.3, icon: '🔔', file: 'sounds/HIHAT1.wav' },
+            { key: 'T', name: 'Clap', vol: 0.8, pan: 0.2, icon: '👏', file: 'sounds/HIHAT2.wav' },
+            { key: 'A', name: 'Tom Low', vol: 0.9, pan: -0.5, icon: '🪵', file: 'sounds/HIHAT3.wav' },
+            { key: 'S', name: 'Tom Mid', vol: 0.9, pan: 0, icon: '🪵', file: 'sounds/TOM1.wav' },
+            { key: 'D', name: 'Tom High', vol: 0.9, pan: 0.5, icon: '🪵', file: 'sounds/TOM2.wav' },
+            { key: 'F', name: 'Crash', vol: 0.8, pan: -0.7, icon: '💿', file: 'sounds/FLOOR TOM.wav' },
+            { key: 'G', name: 'Ride', vol: 0.8, pan: 0.7, icon: '📀', file: 'sounds/RIDE1.wav' },
+            { key: 'Z', name: 'Rimshot', vol: 0.7, pan: -0.1, icon: '🥢', file: 'sounds/RIDE2.wav' },
+            { key: 'X', name: 'Cowbell', vol: 0.7, pan: 0.3, icon: '🔔', file: 'sounds/OVER H1.wav' },
+            { key: 'C', name: 'Tambourine', vol: 0.7, pan: 0.4, icon: '🪇', file: 'sounds/OVER H2.wav' },
+            { key: 'V', name: 'Shaker', vol: 0.6, pan: -0.4, icon: '🫙', file: 'sounds/OVERH3.wav' },
+            { key: 'B', name: 'Bongo', vol: 0.8, pan: 0.5, icon: '🪘', file: 'sounds/OTHER1.wav' }
         ];
 
         let drumConfigs = JSON.parse(JSON.stringify(defaultDrumConfigs));
@@ -1562,7 +1494,7 @@ function getMasterBus() {
             name: `FX ${i + 1}`,
             icon: '🔊',
             fileName: null,
-            defaultFile: `Fx_sound/BANK FX${i + 1}.wav` // ไฟล์เสียงเริ่มต้นที่จะพยายามโหลดให้อัตโนมัติ
+            defaultFile: `Fx/BANK FX${i + 1}.wav` // ไฟล์เสียงเริ่มต้นที่จะพยายามโหลดให้อัตโนมัติ
         }));
         const soundFxBuffers = {}; // key: slot.id -> AudioBuffer ที่ decode แล้ว
         let selectedFxSlotId = null; // ช่องที่ถูกเลือกล่าสุด (ใช้ตอนกดปุ่ม "แก้ไขจังหวะที่เลือก")
@@ -2148,7 +2080,7 @@ function getMasterBus() {
                 gain.gain.setValueAtTime(0.35, time);
                 gain.gain.exponentialRampToValueAtTime(0.01, time + 0.04);
                 osc.connect(gain);
-                gain.connect(audioCtx.destination);
+                gain.connect(getMasterBus()); // เดิม: gain.connect(audioCtx.destination);
                 osc.start(time); osc.stop(time + 0.04);
             } catch (e) {}
         }
@@ -2682,101 +2614,6 @@ function getMasterBus() {
             renderPatternGrid();
             renderSongGrid(songs);
         });
-        // ==========================================
-// MOBILE NAVIGATION
-// ==========================================
-
-function toggleMobileMenu() {
-
-    const menu = document.getElementById('mobileMenu');
-    const btn = document.getElementById('mobileMenuBtn');
-    const icon = document.getElementById('mobileMenuIcon');
-
-    if (!menu || !btn) return;
-
-    const isHidden = menu.classList.contains('hidden');
-
-    if (isHidden) {
-
-        menu.classList.remove('hidden');
-
-        btn.setAttribute('aria-expanded', 'true');
-
-        if (icon) {
-            icon.innerHTML = `
-                <path stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"/>
-            `;
-        }
-
-    } else {
-
-        closeMobileMenu();
-
-    }
-}
-
-
-function closeMobileMenu() {
-
-    const menu = document.getElementById('mobileMenu');
-    const btn = document.getElementById('mobileMenuBtn');
-    const icon = document.getElementById('mobileMenuIcon');
-
-    if (menu) {
-        menu.classList.add('hidden');
-    }
-
-    if (btn) {
-        btn.setAttribute('aria-expanded', 'false');
-    }
-
-    if (icon) {
-        icon.innerHTML = `
-            <path stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"/>
-        `;
-    }
-}
-
-
-function mobileNavigate(page, anchor = null) {
-
-    showPage(page);
-
-    closeMobileMenu();
-
-    if (anchor) {
-
-        setTimeout(() => {
-
-            const target = document.getElementById(anchor);
-
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-
-        }, 100);
-
-    }
-}
-
-
-// ปิดเมนูเมื่อกลับไปใช้ Desktop
-window.addEventListener('resize', () => {
-
-    if (window.innerWidth >= 768) {
-        closeMobileMenu();
-    }
-
-});
     </script>
 </body>
 </html>
