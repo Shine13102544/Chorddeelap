@@ -2333,7 +2333,18 @@ async function initAudio() {
         // การสร้าง AudioContext เฉยๆ (ไม่ resume()) ไม่ต้องใช้ user gesture เบราว์เซอร์อนุญาต แค่จะเริ่มในสถานะ suspended ไปก่อน
         // ส่วนการ decode ไฟล์เสียงก็ทำได้แม้ context จะยัง suspended อยู่ — พอผู้ใช้กดปุ่มจริงๆ initAudio() จะ resume() ให้เองทีหลัง
         // ผลคือ: กว่าผู้ใช้จะกดเล่นจริง (มักจะอ่านหน้าเว็บ 2-3 วินาทีก่อน) ไฟล์เสียงมักโหลดเสร็จไปแล้ว แทบไม่มีดีเลย์จากการรอไฟล์เลย
-      
+        (function eagerPreloadAllSounds() {
+            try {
+                if (!audioCtx) {
+                    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                    audioCtx = new AudioContextClass();
+                }
+                preloadPercussionSamples();
+                preloadSoundFxDefaults();
+            } catch (e) {
+                // บางเบราว์เซอร์อาจกันไว้ (เช่น Safari เก่าบางเวอร์ชัน) — ไม่เป็นไร initAudio() ตอนกดเล่นจริงจะสร้าง context ให้เองแทน
+            }
+        })();
 
         // โหลดข้อมูลที่บันทึกไว้บนเซิร์ฟเวอร์ (Turso) มาทับค่าเริ่มต้น — ถ้ายังไม่ได้ตั้งค่า backend จะข้ามไปเงียบๆ ใช้ค่าปกติต่อ
         loadPatternsFromServer();
@@ -2497,16 +2508,18 @@ async function initAudio() {
 
         // --- Rhythm Library Audio Engine ---
         let rhythmPlaybackStartTime = 0;
-        function startRhythmEngine() {
-            initAudio();
-            stopRhythmEngine(); // เคลียร์ของเก่าก่อนเริ่มใหม่เสมอ (กันซ้อนเวลาสลับ pattern/mode ระหว่างเล่น)
-            preloadPercussionSamples(); // โหลดไฟล์เสียงจริงแบบ background ไม่รอ (fire-and-forget) — ถ้ายังไม่มีไฟล์ เสียงสังเคราะห์จะเล่นแทนไปก่อนได้ทันที ไม่ต้องหน่วงรอ fetch/404 ก่อนเสียงออก
-            rhythmCurrentStep = 0;
-            rhythmNextNoteTime = audioCtx.currentTime + 0.02; // ลดจาก 0.05 ให้จังหวะที่ 1 ดังเร็วขึ้นทันทีที่กด (0.02s ยังพอกันเสียงเพี้ยนจาก audio thread timing ได้)
-            rhythmPlaybackStartTime = rhythmNextNoteTime;
-            rhythmScheduler();
-            startRhythmBeatPulseLoop();
-        }
+       async function startRhythmEngine() {
+    await initAudio();
+
+    stopRhythmEngine();
+    preloadPercussionSamples();
+
+    rhythmCurrentStep = 0;
+    rhythmNextNoteTime = audioCtx.currentTime + 0.02;
+    rhythmPlaybackStartTime = rhythmNextNoteTime;
+    rhythmScheduler();
+    startRhythmBeatPulseLoop();
+}
 
         function stopRhythmEngine() {
             if (rhythmTimerId) {
