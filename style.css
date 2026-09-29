@@ -115,3 +115,5574 @@ h1, h2, h3 {
     animation: tapTempoPulse 0.28s ease-out;
     display: inline-block;
 }
+
+
+/* ============================================================
+   CHORDDEELAP
+   RHYTHM LIBRARY - MOBILE / IPAD
+   ออกแบบตาม Mockup ที่ผู้ใช้กำหนด
+   PC ไม่เปลี่ยน
+   ============================================================ */
+
+
+/* ============================================================
+   IPAD / TABLET
+   769px - 1024px
+   ============================================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* หน้า Rhythm */
+    #rhythmLibraryView {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 5rem 0.7rem 1rem !important;
+    }
+
+    /* กล่องหลัก */
+    #rhythmLibraryView > div {
+        padding: 0.7rem !important;
+        border-radius: 1rem !important;
+    }
+
+
+    /* ========================================================
+       HEADER
+       ซ้าย = หัวข้อ
+       ขวา = Slow / Fast
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(1) {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 235px !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    #rhythmLibraryView h1 {
+        font-size: 1.55rem !important;
+        line-height: 1.15 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(1) p {
+        font-size: 9px !important;
+        margin-top: 2px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(1) span {
+        font-size: 7px !important;
+        padding: 2px 6px !important;
+        margin-bottom: 3px !important;
+    }
+
+
+    /* Slow / Fast */
+    #rhythmLibraryView #tabSlowBtn,
+    #rhythmLibraryView #tabFastBtn {
+        padding: 0.45rem 0.3rem !important;
+        font-size: 10px !important;
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(1) > div:last-child {
+        width: 100% !important;
+        padding: 3px !important;
+    }
+
+
+    /* ========================================================
+       MAIN CONTROL
+       Play | 4/4 | BPM | Tempo
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2) {
+        display: grid !important;
+        grid-template-columns:
+            minmax(190px, 1.25fr)
+            minmax(145px, 0.9fr)
+            minmax(220px, 1.3fr) !important;
+
+        align-items: center !important;
+        gap: 0.45rem !important;
+
+        padding: 0.45rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+
+    /* Left: Play + Status + 4/4 */
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(1) {
+        gap: 0.5rem !important;
+    }
+
+    #rhythmLibraryView #rhythmPlayBtn {
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: 10px !important;
+    }
+
+    #rhythmLibraryView #rhythmPlayIcon {
+        width: 19px !important;
+        height: 19px !important;
+    }
+
+    #rhythmLibraryView #activePatternName {
+        font-size: 7px !important;
+        line-height: 1.1 !important;
+    }
+
+    #rhythmLibraryView #rhythmStatusText {
+        font-size: 8px !important;
+        line-height: 1.1 !important;
+    }
+
+    #rhythmLibraryView #beatPulseDot {
+        width: 5px !important;
+        height: 5px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(1) > div:last-child {
+        min-width: 75px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2) label {
+        font-size: 7px !important;
+        margin-bottom: 2px !important;
+    }
+
+    #rhythmLibraryView #timeSigSelect {
+        width: 90px !important;
+        padding: 0.3rem !important;
+        font-size: 8px !important;
+    }
+
+
+    /* BPM Presets */
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(2) {
+        min-width: 0 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(2) label {
+        font-size: 7px !important;
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView #bpmPresetsContainer {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 3px !important;
+    }
+
+    #rhythmLibraryView #bpmPresetsContainer button {
+        width: 29px !important;
+        height: 27px !important;
+        min-width: 29px !important;
+        min-height: 27px !important;
+        padding: 0 !important;
+        font-size: 8px !important;
+        border-radius: 6px !important;
+    }
+
+
+    /* Tempo */
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(3) {
+        gap: 5px !important;
+        padding: 5px !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmText {
+        font-size: 8px !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmSlider {
+        width: 70px !important;
+    }
+
+    #rhythmLibraryView #tapTempoBtn {
+        padding: 0.45rem 0.55rem !important;
+        font-size: 8px !important;
+    }
+
+
+    /* ========================================================
+       8 เครื่องดนตรี
+       ให้เรียง 8 ตัวในแถวเดียว
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(3) {
+        margin-bottom: 0.6rem !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(3) > div:first-child {
+        margin-bottom: 0.25rem !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(3) h3 {
+        font-size: 7px !important;
+        line-height: 1.1 !important;
+    }
+
+    #rhythmLibraryView #instToggleContainer {
+        grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+        gap: 3px !important;
+    }
+
+
+    /* ========================================================
+       MIDI HEADER
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(4) > div:first-child {
+        margin-bottom: 0.35rem !important;
+    }
+
+    #rhythmLibraryView #patternCategoryTitle {
+        font-size: 9px !important;
+    }
+
+    #rhythmLibraryView #patternCategoryTitle + div button {
+        font-size: 7px !important;
+        padding: 3px 5px !important;
+    }
+
+
+    /* ========================================================
+       MIDI CARD
+       iPad = 5 คอลัมน์
+       ======================================================== */
+
+    #rhythmLibraryView #midiPatternsGrid {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 4px !important;
+    }
+
+
+    /* ========================================================
+       BANK
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(4) > div:last-child {
+        margin-top: 0.45rem !important;
+        padding: 0.35rem !important;
+        gap: 0.35rem !important;
+    }
+
+    #rhythmLibraryView #bankInfoText,
+    #rhythmLibraryView > div > div:nth-child(4) > div:last-child span {
+        font-size: 7px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(4) > div:last-child button {
+        font-size: 7px !important;
+        padding: 0.3rem 0.45rem !important;
+    }
+}
+
+
+/* ============================================================
+   MOBILE
+   <= 768px
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* ========================================================
+       PAGE
+       ======================================================== */
+
+    #rhythmLibraryView {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 3.6rem 0.2rem 0.5rem !important;
+    }
+
+    #rhythmLibraryView > div {
+        width: 100% !important;
+        padding: 0.4rem !important;
+        border-radius: 0.75rem !important;
+    }
+
+
+    /* ========================================================
+       HEADER
+       รูปแบบเดียวกับภาพ:
+       ซ้าย = ชื่อ
+       ขวา = Slow / Fast
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(1) {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 128px !important;
+        align-items: center !important;
+        gap: 4px !important;
+
+        margin-bottom: 4px !important;
+        padding-bottom: 4px !important;
+    }
+
+    #rhythmLibraryView h1 {
+        font-size: 1.05rem !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(1) p {
+        font-size: 6px !important;
+        line-height: 1.2 !important;
+        margin-top: 2px !important;
+    }
+
+    /* ป้าย Percussion */
+    #rhythmLibraryView > div > div:nth-child(1) > div:first-child > span {
+        font-size: 5px !important;
+        padding: 2px 4px !important;
+        margin-bottom: 2px !important;
+    }
+
+
+    /* ========================================================
+       SLOW / FAST
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(1) > div:last-child {
+        width: 128px !important;
+        padding: 2px !important;
+        gap: 1px !important;
+    }
+
+    #rhythmLibraryView #tabSlowBtn,
+    #rhythmLibraryView #tabFastBtn {
+        min-width: 0 !important;
+        padding: 0.4rem 0.15rem !important;
+        font-size: 7px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+
+    /* ========================================================
+       MAIN CONTROL
+       ทั้งหมดอยู่แถวเดียว
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2) {
+
+        display: grid !important;
+
+        /*
+           Play/4/4 | BPM | Tempo
+        */
+        grid-template-columns:
+            minmax(105px, 1.25fr)
+            minmax(72px, 0.85fr)
+            minmax(100px, 1.1fr) !important;
+
+        align-items: center !important;
+
+        gap: 3px !important;
+
+        padding: 3px !important;
+        margin-bottom: 5px !important;
+    }
+
+
+    /* ========================================================
+       PLAY + STATUS + TIME SIGNATURE
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(1) {
+        display: flex !important;
+        align-items: center !important;
+        gap: 3px !important;
+        min-width: 0 !important;
+    }
+
+    #rhythmLibraryView #rhythmPlayBtn {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        border-radius: 8px !important;
+    }
+
+    #rhythmLibraryView #rhythmPlayIcon {
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    #rhythmLibraryView #activePatternName {
+        font-size: 5px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView #rhythmStatusText {
+        font-size: 6px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView #beatPulseDot {
+        width: 4px !important;
+        height: 4px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(1) > div:last-child {
+        min-width: 0 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2) label {
+        display: none !important;
+    }
+
+    #rhythmLibraryView #timeSigSelect {
+        width: 58px !important;
+        min-width: 58px !important;
+        padding: 0.25rem 0.2rem !important;
+        font-size: 6px !important;
+        border-radius: 5px !important;
+    }
+
+
+    /* ========================================================
+       BPM PRESETS
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(2) {
+        min-width: 0 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(2) label {
+        font-size: 5px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+        margin-bottom: 2px !important;
+    }
+
+    #rhythmLibraryView #bpmPresetsContainer {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 2px !important;
+        width: 100% !important;
+    }
+
+    #rhythmLibraryView #bpmPresetsContainer button {
+        width: 100% !important;
+        height: 18px !important;
+        min-width: 0 !important;
+        min-height: 18px !important;
+        padding: 0 !important;
+        font-size: 5px !important;
+        border-radius: 4px !important;
+    }
+
+
+    /* ========================================================
+       TEMPO
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(3) {
+        min-width: 0 !important;
+        gap: 3px !important;
+        padding: 3px !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmText {
+        font-size: 5px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2) > div:nth-child(3) > div {
+        min-width: 0 !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmSlider {
+        width: 38px !important;
+        min-width: 38px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2) button:not(#tapTempoBtn) {
+        width: 17px !important;
+        height: 17px !important;
+        min-width: 17px !important;
+        min-height: 17px !important;
+        padding: 0 !important;
+        font-size: 7px !important;
+    }
+
+    #rhythmLibraryView #tapTempoBtn {
+        padding: 0.3rem 0.35rem !important;
+        font-size: 5px !important;
+        border-radius: 5px !important;
+    }
+
+
+    /* ========================================================
+       8 PERCUSSION
+       8 ตัวในแถวเดียว
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(3) {
+        margin-bottom: 5px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(3) > div:first-child {
+        margin-bottom: 2px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(3) h3 {
+        font-size: 5px !important;
+        line-height: 1 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(3) > div:first-child button {
+        width: 16px !important;
+        height: 16px !important;
+        font-size: 8px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(3) > div:first-child div button {
+        font-size: 5px !important;
+    }
+
+    #rhythmLibraryView #instToggleContainer {
+        grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+        gap: 2px !important;
+    }
+
+
+    /* ========================================================
+       MIDI HEADER
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(4) > div:first-child {
+        margin-bottom: 3px !important;
+    }
+
+    #rhythmLibraryView #patternCategoryTitle {
+        font-size: 7px !important;
+        line-height: 1 !important;
+    }
+
+    #rhythmLibraryView #patternCategoryTitle + div {
+        gap: 2px !important;
+    }
+
+    #rhythmLibraryView #patternCategoryTitle + div button {
+        font-size: 5px !important;
+        padding: 2px 3px !important;
+        border-radius: 4px !important;
+    }
+
+
+    /* ========================================================
+       MIDI CARDS
+       มือถือ = 4 คอลัมน์
+       ======================================================== */
+
+    #rhythmLibraryView #midiPatternsGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 3px !important;
+    }
+
+
+    /* ========================================================
+       BANK BAR
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(4) > div:last-child {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        gap: 3px !important;
+
+        margin-top: 4px !important;
+        padding: 3px !important;
+        border-radius: 7px !important;
+    }
+
+    #rhythmLibraryView #bankInfoText {
+        font-size: 5px !important;
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(4) > div:last-child > div:first-child {
+        min-width: 0 !important;
+        gap: 2px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(4) > div:last-child > div:last-child {
+        width: auto !important;
+        overflow: visible !important;
+        gap: 2px !important;
+        justify-content: flex-end !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(4) > div:last-child button {
+        padding: 0.2rem 0.25rem !important;
+        font-size: 5px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+    }
+}
+
+
+/* ============================================================
+   VERY SMALL PHONE
+   <= 380px
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+    #rhythmLibraryView > div {
+        padding: 3px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(1) {
+        grid-template-columns: minmax(0, 1fr) 118px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(1) > div:last-child {
+        width: 118px !important;
+    }
+
+    #rhythmLibraryView h1 {
+        font-size: 0.95rem !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2) {
+        grid-template-columns:
+            minmax(95px, 1.2fr)
+            minmax(65px, 0.8fr)
+            minmax(90px, 1fr) !important;
+    }
+
+    #rhythmLibraryView #rhythmPlayBtn {
+        width: 29px !important;
+        height: 29px !important;
+        min-width: 29px !important;
+    }
+
+    #rhythmLibraryView #timeSigSelect {
+        width: 52px !important;
+        min-width: 52px !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmSlider {
+        width: 30px !important;
+        min-width: 30px !important;
+    }
+
+    #rhythmLibraryView #tapTempoBtn {
+        font-size: 4.5px !important;
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    }
+
+    #rhythmLibraryView #midiPatternsGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 2px !important;
+    }
+}
+/* ============================================================
+   CHORDDEELAP
+   RHYTHM LIBRARY
+   FINAL MOBILE / IPAD OVERRIDE
+   PC เดิมทั้งหมด
+   ============================================================ */
+
+
+/* ============================================================
+   iPAD
+   769px - 1024px
+   ============================================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* -------------------------
+       หน้าหลัก
+       ------------------------- */
+
+    #rhythmLibraryView {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 4.5rem 0.6rem 0.5rem !important;
+        overflow-x: hidden !important;
+    }
+
+    #rhythmLibraryView > div {
+        width: 100% !important;
+        padding: 0.6rem !important;
+        border-radius: 14px !important;
+    }
+
+
+    /* ========================================================
+       HEADER
+       ซ้าย = ชื่อ
+       ขวา = Slow / Fast
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(1) {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 230px !important;
+        align-items: center !important;
+        gap: 8px !important;
+
+        margin-bottom: 6px !important;
+        padding-bottom: 6px !important;
+    }
+
+    #rhythmLibraryView h1 {
+        font-size: 1.55rem !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(1) p {
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+        margin-top: 2px !important;
+    }
+
+
+    /* ป้ายเล็กด้านบน */
+
+    #rhythmLibraryView > div > div:nth-child(1)
+    > div:first-child > span {
+        font-size: 7px !important;
+        padding: 2px 6px !important;
+    }
+
+
+    /* -------------------------
+       Slow / Fast
+       ------------------------- */
+
+    #rhythmLibraryView > div > div:nth-child(1)
+    > div:last-child {
+        width: 230px !important;
+        padding: 3px !important;
+        gap: 2px !important;
+    }
+
+    #rhythmLibraryView #tabSlowBtn,
+    #rhythmLibraryView #tabFastBtn {
+        min-width: 0 !important;
+        padding: 0.5rem 0.25rem !important;
+        font-size: 10px !important;
+        white-space: nowrap !important;
+    }
+
+
+    /* ========================================================
+       CONTROL PANEL
+       Play + 4/4 | BPM | Tempo
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2) {
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(190px, 1.25fr)
+            minmax(130px, 0.9fr)
+            minmax(190px, 1.15fr) !important;
+
+        align-items: center !important;
+        gap: 6px !important;
+
+        padding: 6px !important;
+        margin-bottom: 7px !important;
+    }
+
+
+    /* -------------------------
+       Play + Status + 4/4
+       ------------------------- */
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    > div:nth-child(1) {
+
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        min-width: 0 !important;
+    }
+
+    #rhythmLibraryView #rhythmPlayBtn {
+        width: 45px !important;
+        height: 45px !important;
+        min-width: 45px !important;
+        border-radius: 11px !important;
+    }
+
+    #rhythmLibraryView #rhythmPlayIcon {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    #rhythmLibraryView #activePatternName {
+        font-size: 7px !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView #rhythmStatusText {
+        font-size: 8px !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView #beatPulseDot {
+        width: 5px !important;
+        height: 5px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    label {
+        font-size: 7px !important;
+        margin-bottom: 2px !important;
+    }
+
+    #rhythmLibraryView #timeSigSelect {
+        width: 90px !important;
+        padding: 0.35rem !important;
+        font-size: 8px !important;
+    }
+
+
+    /* ========================================================
+       BPM PRESETS
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    > div:nth-child(2) {
+        min-width: 0 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    > div:nth-child(2) label {
+        font-size: 7px !important;
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView #bpmPresetsContainer {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 3px !important;
+    }
+
+    #rhythmLibraryView #bpmPresetsContainer button {
+        width: 100% !important;
+        height: 27px !important;
+        min-width: 0 !important;
+        min-height: 27px !important;
+
+        padding: 0 !important;
+
+        font-size: 8px !important;
+        border-radius: 6px !important;
+    }
+
+
+    /* ========================================================
+       TEMPO
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    > div:nth-child(3) {
+
+        min-width: 0 !important;
+        gap: 5px !important;
+        padding: 5px !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmText {
+        font-size: 8px !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmSlider {
+        width: 70px !important;
+    }
+
+    #rhythmLibraryView #tapTempoBtn {
+        padding: 0.45rem 0.5rem !important;
+        font-size: 8px !important;
+        white-space: nowrap !important;
+    }
+
+
+    /* ========================================================
+       8 เครื่องดนตรี
+       ======================================================== */
+
+    #rhythmLibraryView #instToggleContainer {
+        display: grid !important;
+        grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+        gap: 3px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(3) h3 {
+        font-size: 8px !important;
+    }
+
+
+    /* ========================================================
+       MIDI
+       ======================================================== */
+
+    #rhythmLibraryView #patternCategoryTitle {
+        font-size: 10px !important;
+    }
+
+    #rhythmLibraryView #midiPatternsGrid {
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+    }
+
+    #rhythmLibraryView #midiPatternsGrid > * {
+        min-width: 0 !important;
+    }
+
+
+    /* ========================================================
+       BANK
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(4)
+    > div:last-child {
+        margin-top: 5px !important;
+        padding: 4px !important;
+    }
+
+    #rhythmLibraryView #bankInfoText {
+        font-size: 7px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(4)
+    > div:last-child button {
+        font-size: 7px !important;
+        padding: 4px 6px !important;
+    }
+}
+
+
+
+/* ============================================================
+   MOBILE
+   <= 768px
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* ========================================================
+       PAGE
+       ======================================================== */
+
+    #rhythmLibraryView {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 3.5rem 3px 5px !important;
+
+        overflow-x: hidden !important;
+    }
+
+    #rhythmLibraryView > div {
+        width: 100% !important;
+        padding: 5px !important;
+
+        border-radius: 10px !important;
+    }
+
+
+    /* ========================================================
+       HEADER
+       รูปแบบตามภาพ
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(1) {
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            130px !important;
+
+        align-items: center !important;
+
+        gap: 5px !important;
+
+        margin-bottom: 5px !important;
+        padding-bottom: 5px !important;
+    }
+
+
+    /* ชื่อ */
+
+    #rhythmLibraryView h1 {
+        font-size: 1rem !important;
+        line-height: 1.1 !important;
+
+        margin: 0 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(1) p {
+        font-size: 6px !important;
+        line-height: 1.2 !important;
+
+        margin-top: 2px !important;
+    }
+
+
+    /* ป้าย Percussion */
+
+    #rhythmLibraryView > div > div:nth-child(1)
+    > div:first-child > span {
+        font-size: 5px !important;
+
+        padding: 2px 4px !important;
+
+        margin-bottom: 2px !important;
+    }
+
+
+    /* ========================================================
+       SLOW / FAST
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(1)
+    > div:last-child {
+
+        width: 130px !important;
+
+        padding: 2px !important;
+
+        gap: 1px !important;
+    }
+
+    #rhythmLibraryView #tabSlowBtn,
+    #rhythmLibraryView #tabFastBtn {
+
+        min-width: 0 !important;
+
+        padding: 0.4rem 0.15rem !important;
+
+        font-size: 7px !important;
+
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* ========================================================
+       CONTROL PANEL
+       
+       [ Play/4/4 ] [ BPM ] [ Tempo ]
+       
+       ทั้งหมดอยู่แถวเดียว
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2) {
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(105px, 1.2fr)
+            minmax(75px, 0.85fr)
+            minmax(105px, 1.15fr) !important;
+
+        align-items: center !important;
+
+        gap: 3px !important;
+
+        padding: 4px !important;
+
+        margin-bottom: 5px !important;
+    }
+
+
+    /* ========================================================
+       PLAY + STATUS + 4/4
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    > div:nth-child(1) {
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        gap: 3px !important;
+
+        min-width: 0 !important;
+    }
+
+
+    /* Play */
+
+    #rhythmLibraryView #rhythmPlayBtn {
+
+        width: 32px !important;
+        height: 32px !important;
+
+        min-width: 32px !important;
+
+        border-radius: 8px !important;
+    }
+
+    #rhythmLibraryView #rhythmPlayIcon {
+
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+
+    /* ข้อความสถานะ */
+
+    #rhythmLibraryView #activePatternName {
+
+        font-size: 5px !important;
+
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView #rhythmStatusText {
+
+        font-size: 6px !important;
+
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView #beatPulseDot {
+
+        width: 4px !important;
+        height: 4px !important;
+    }
+
+
+    /* 4/4 */
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    label {
+        display: none !important;
+    }
+
+    #rhythmLibraryView #timeSigSelect {
+
+        width: 58px !important;
+
+        min-width: 58px !important;
+
+        padding: 4px 2px !important;
+
+        font-size: 6px !important;
+
+        border-radius: 5px !important;
+    }
+
+
+    /* ========================================================
+       BPM
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    > div:nth-child(2) {
+
+        min-width: 0 !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    > div:nth-child(2) label {
+
+        display: block !important;
+
+        font-size: 5px !important;
+
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+
+        margin-bottom: 2px !important;
+    }
+
+
+    #rhythmLibraryView #bpmPresetsContainer {
+
+        display: grid !important;
+
+        grid-template-columns: repeat(4, 1fr) !important;
+
+        gap: 2px !important;
+
+        width: 100% !important;
+    }
+
+    #rhythmLibraryView #bpmPresetsContainer button {
+
+        width: 100% !important;
+
+        height: 19px !important;
+
+        min-width: 0 !important;
+
+        min-height: 19px !important;
+
+        padding: 0 !important;
+
+        font-size: 5px !important;
+
+        border-radius: 4px !important;
+    }
+
+
+    /* ========================================================
+       TEMPO
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    > div:nth-child(3) {
+
+        min-width: 0 !important;
+
+        gap: 3px !important;
+
+        padding: 3px !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmText {
+
+        font-size: 5px !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmSlider {
+
+        width: 38px !important;
+
+        min-width: 38px !important;
+    }
+
+
+    /* ปุ่ม - + */
+
+    #rhythmLibraryView > div > div:nth-child(2)
+    button:not(#tapTempoBtn) {
+
+        width: 17px !important;
+
+        height: 17px !important;
+
+        min-width: 17px !important;
+
+        min-height: 17px !important;
+
+        padding: 0 !important;
+
+        font-size: 7px !important;
+    }
+
+
+    /* TAP TEMPO */
+
+    #rhythmLibraryView #tapTempoBtn {
+
+        padding: 5px 4px !important;
+
+        font-size: 5px !important;
+
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+
+        border-radius: 5px !important;
+    }
+
+
+    /* ========================================================
+       8 PERCUSSION
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(3) {
+
+        margin-bottom: 5px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(3) h3 {
+
+        font-size: 6px !important;
+
+        line-height: 1 !important;
+    }
+
+    #rhythmLibraryView #instToggleContainer {
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(8, minmax(0, 1fr)) !important;
+
+        gap: 2px !important;
+    }
+
+
+    /* ========================================================
+       MIDI HEADER
+       ======================================================== */
+
+    #rhythmLibraryView #patternCategoryTitle {
+
+        font-size: 8px !important;
+
+        line-height: 1 !important;
+    }
+
+    #rhythmLibraryView #patternCategoryTitle + div {
+
+        gap: 2px !important;
+    }
+
+    #rhythmLibraryView #patternCategoryTitle + div button {
+
+        font-size: 5px !important;
+
+        padding: 3px 4px !important;
+
+        border-radius: 4px !important;
+    }
+
+
+    /* ========================================================
+       MIDI CARDS
+       
+       4 คอลัมน์
+       ======================================================== */
+
+    #rhythmLibraryView #midiPatternsGrid {
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr)) !important;
+
+        gap: 3px !important;
+    }
+
+    #rhythmLibraryView #midiPatternsGrid > * {
+
+        min-width: 0 !important;
+    }
+
+
+    /* ========================================================
+       BANK
+       ======================================================== */
+
+    #rhythmLibraryView > div > div:nth-child(4)
+    > div:last-child {
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+
+        justify-content: space-between !important;
+
+        gap: 3px !important;
+
+        margin-top: 4px !important;
+
+        padding: 3px !important;
+
+        border-radius: 6px !important;
+    }
+
+    #rhythmLibraryView #bankInfoText {
+
+        font-size: 5px !important;
+
+        white-space: nowrap !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(4)
+    > div:last-child button {
+
+        font-size: 5px !important;
+
+        padding: 3px 4px !important;
+
+        border-radius: 4px !important;
+
+        white-space: nowrap !important;
+    }
+}
+
+
+
+/* ============================================================
+   MOBILE เล็กมาก
+   <= 380px
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+    #rhythmLibraryView {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    }
+
+    #rhythmLibraryView > div {
+        padding: 3px !important;
+    }
+
+
+    /* Header */
+
+    #rhythmLibraryView > div > div:nth-child(1) {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            115px !important;
+    }
+
+    #rhythmLibraryView > div > div:nth-child(1)
+    > div:last-child {
+
+        width: 115px !important;
+    }
+
+    #rhythmLibraryView h1 {
+
+        font-size: 0.9rem !important;
+    }
+
+
+    /* Control */
+
+    #rhythmLibraryView > div > div:nth-child(2) {
+
+        grid-template-columns:
+            minmax(95px, 1.2fr)
+            minmax(65px, 0.8fr)
+            minmax(90px, 1fr) !important;
+    }
+
+    #rhythmLibraryView #rhythmPlayBtn {
+
+        width: 29px !important;
+        height: 29px !important;
+
+        min-width: 29px !important;
+    }
+
+    #rhythmLibraryView #timeSigSelect {
+
+        width: 52px !important;
+
+        min-width: 52px !important;
+    }
+
+    #rhythmLibraryView #rhythmBpmSlider {
+
+        width: 30px !important;
+
+        min-width: 30px !important;
+    }
+
+    #rhythmLibraryView #tapTempoBtn {
+
+        font-size: 4.5px !important;
+
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    }
+
+
+    /* MIDI */
+
+    #rhythmLibraryView #midiPatternsGrid {
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr)) !important;
+
+        gap: 2px !important;
+    }
+}
+
+
+/* =========================================================
+   ปรับตัวหนังสือการ์ด MIDI ให้เล็กลงบนมือถือ
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ชื่อจังหวะ */
+    #rhythmLibraryView #midiPatternsGrid h4 {
+        font-size: 8px !important;
+        line-height: 1.15 !important;
+        margin: 0 !important;
+    }
+
+    /* BPM */
+    #rhythmLibraryView #midiPatternsGrid p {
+        font-size: 6px !important;
+        line-height: 1.1 !important;
+        margin-top: 2px !important;
+    }
+
+    /* MIDI Beat + กดเพื่อเล่น */
+    #rhythmLibraryView #midiPatternsGrid
+    > div > div:last-child {
+        font-size: 5px !important;
+        line-height: 1 !important;
+        padding-top: 3px !important;
+    }
+
+    /* ไอคอน */
+    #rhythmLibraryView #midiPatternsGrid
+    > div > div:first-child > span:first-child {
+        font-size: 12px !important;
+    }
+
+    /* OFF / READY */
+    #rhythmLibraryView #midiPatternsGrid
+    > div > div:first-child
+    > div:last-child {
+        font-size: 5px !important;
+        padding: 2px 4px !important;
+        gap: 2px !important;
+    }
+
+    /* จุดไฟ */
+    #rhythmLibraryView #midiPatternsGrid
+    > div > div:first-child
+    > div:last-child > span:first-child {
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    /* ตัวการ์ด */
+    #rhythmLibraryView #midiPatternsGrid > div {
+        padding: 7px !important;
+        height: 78px !important;
+        border-radius: 9px !important;
+    }
+}
+
+
+/* =========================================================
+   มือถือเล็ก
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    #rhythmLibraryView #midiPatternsGrid > div {
+        padding: 5px !important;
+        height: 70px !important;
+    }
+
+    #rhythmLibraryView #midiPatternsGrid h4 {
+        font-size: 7px !important;
+    }
+
+    #rhythmLibraryView #midiPatternsGrid p {
+        font-size: 5px !important;
+    }
+
+    #rhythmLibraryView #midiPatternsGrid
+    > div > div:last-child {
+        font-size: 4px !important;
+    }
+
+    #rhythmLibraryView #midiPatternsGrid
+    > div > div:first-child > span:first-child {
+        font-size: 10px !important;
+    }
+}
+/* =========================================================
+   ปรับ 8 เครื่องดนตรีให้เล็กลงบนมือถือ
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ตัวการ์ดเครื่องดนตรี */
+    #rhythmLibraryView #instToggleContainer > button {
+        padding: 4px 3px !important;
+        gap: 1px !important;
+        min-width: 0 !important;
+        height: 48px !important;
+        border-radius: 7px !important;
+    }
+
+    /* แถวไอคอน + จุดสถานะ */
+    #rhythmLibraryView #instToggleContainer > button > div {
+        font-size: 8px !important;
+        line-height: 1 !important;
+    }
+
+    /* ไอคอน */
+    #rhythmLibraryView #instToggleContainer > button > div > span:first-child {
+        font-size: 9px !important;
+    }
+
+    /* จุดสีเขียว */
+    #rhythmLibraryView #instToggleContainer > button > div > span:last-child {
+        width: 5px !important;
+        height: 5px !important;
+    }
+
+    /* ชื่อเครื่อง */
+    #rhythmLibraryView #instToggleContainer > button > span:nth-child(2) {
+        font-size: 6px !important;
+        line-height: 1 !important;
+        margin-top: 1px !important;
+    }
+
+    /* เปิดเสียง / ปิดเสียง */
+    #rhythmLibraryView #instToggleContainer > button > span:nth-child(3) {
+        font-size: 5px !important;
+        line-height: 1 !important;
+    }
+}
+
+
+/* =========================================================
+   มือถือเล็กมาก
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    #rhythmLibraryView #instToggleContainer > button {
+        padding: 3px 2px !important;
+        height: 44px !important;
+        border-radius: 6px !important;
+    }
+
+    #rhythmLibraryView #instToggleContainer > button > div > span:first-child {
+        font-size: 8px !important;
+    }
+
+    #rhythmLibraryView #instToggleContainer > button > span:nth-child(2) {
+        font-size: 5px !important;
+    }
+
+    #rhythmLibraryView #instToggleContainer > button > span:nth-child(3) {
+        font-size: 4px !important;
+    }
+}
+/* =========================================================
+   CHORDDEELAP
+   MOBILE MODAL COMPACT
+   ทำให้หน้าต่างย่อยพอดีกับมือถือ / iPad
+   PC ไม่เปลี่ยน
+   ========================================================= */
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       ทุก MODAL
+       ===================================================== */
+
+    #settingsModal,
+    #midiEditorModal,
+    #instrumentSettingsModal,
+    #fxEditModal {
+
+        padding: 8px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+
+    /* ตัวกล่อง Modal */
+
+    #settingsModal > div,
+    #midiEditorModal > div,
+    #instrumentSettingsModal > div,
+    #fxEditModal > div {
+
+        width: 100% !important;
+
+        max-width: none !important;
+
+        max-height: 88vh !important;
+
+        border-radius: 18px !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       HEADER ของ Modal
+       ===================================================== */
+
+    #settingsModal > div > div:first-child,
+    #midiEditorModal > div > div:first-child,
+    #instrumentSettingsModal > div > div:first-child,
+    #fxEditModal > div > div:first-child {
+
+        padding: 10px 12px !important;
+
+        min-height: 48px !important;
+
+        gap: 6px !important;
+    }
+
+
+    /* หัวข้อ */
+
+    #settingsModal h2,
+    #midiEditorModal h2,
+    #instrumentSettingsModal h2,
+    #fxEditModal h2 {
+
+        font-size: 14px !important;
+
+        line-height: 1.15 !important;
+
+        gap: 4px !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* ปุ่ม X */
+
+    #settingsModal > div > div:first-child button,
+    #midiEditorModal > div > div:first-child button,
+    #instrumentSettingsModal > div > div:first-child button,
+    #fxEditModal > div > div:first-child button {
+
+        width: 30px !important;
+
+        height: 30px !important;
+
+        min-width: 30px !important;
+
+        font-size: 14px !important;
+
+        border-radius: 50% !important;
+    }
+
+
+    /* =====================================================
+       SETTINGS MODAL
+       ตั้งค่าชิ้นกลอง
+       ===================================================== */
+
+    #settingsModal > div {
+
+        max-height: 86vh !important;
+    }
+
+    #settingsModal #settingsList {
+
+        padding: 8px !important;
+
+        gap: 6px !important;
+
+        overflow-y: auto !important;
+    }
+
+
+    /* แถวแต่ละเครื่อง */
+
+    #settingsModal #settingsList > div {
+
+        padding: 7px !important;
+
+        gap: 5px !important;
+
+        border-radius: 10px !important;
+    }
+
+
+    #settingsModal #settingsList input,
+    #settingsModal #settingsList select {
+
+        font-size: 9px !important;
+
+        min-height: 30px !important;
+
+        padding: 4px 6px !important;
+    }
+
+
+    /* ปุ่มด้านล่าง */
+
+    #settingsModal > div > div:last-child {
+
+        padding: 8px !important;
+
+        gap: 5px !important;
+    }
+
+    #settingsModal > div > div:last-child button {
+
+        font-size: 8px !important;
+
+        padding: 6px 9px !important;
+
+        border-radius: 8px !important;
+    }
+
+
+ /* =========================================================
+   FIX: ตั้งค่าเครื่องดนตรี 8 เครื่อง
+   Mobile / iPad
+   จัด Layout ใหม่ให้ไม่ล้นจอ
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* กล่อง Modal */
+    #instrumentSettingsModal {
+        padding: 6px !important;
+    }
+
+    #instrumentSettingsModal > div {
+        width: 96% !important;
+        max-width: 760px !important;
+        max-height: 90dvh !important;
+        border-radius: 16px !important;
+    }
+
+    /* Header */
+    #instrumentSettingsModal > div > div:first-child {
+        padding: 8px 12px !important;
+        min-height: 44px !important;
+    }
+
+    #instrumentSettingsModal h2 {
+        font-size: 14px !important;
+        line-height: 1.1 !important;
+    }
+
+    #instrumentSettingsModal
+    > div > div:first-child button {
+        width: 30px !important;
+        height: 30px !important;
+        flex-shrink: 0 !important;
+    }
+
+
+    /* =====================================================
+       รายการ 8 เครื่อง
+       เปลี่ยนจาก FLEX เป็น GRID
+       ===================================================== */
+
+    #instrumentSettingsList {
+        padding: 8px !important;
+        gap: 6px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+
+    #instrumentSettingsList > div {
+
+        display: grid !important;
+
+        /*
+          Icon | Name | Pan | Vol | Play
+        */
+        grid-template-columns:
+            36px
+            minmax(120px, 1fr)
+            minmax(105px, 1fr)
+            minmax(105px, 1fr)
+            34px !important;
+
+        align-items: center !important;
+
+        gap: 5px !important;
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding: 6px !important;
+
+        border-radius: 9px !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       ICON
+       ===================================================== */
+
+    #instrumentSettingsList
+    > div > input[data-role="icon"] {
+
+        grid-column: 1 !important;
+
+        grid-row: 1 !important;
+
+        width: 36px !important;
+        min-width: 36px !important;
+
+        height: 36px !important;
+
+        padding: 2px !important;
+
+        font-size: 16px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       NAME
+       ===================================================== */
+
+    #instrumentSettingsList
+    > div > input[data-role="name"] {
+
+        grid-column: 2 !important;
+
+        grid-row: 1 !important;
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: 32px !important;
+
+        padding: 4px 7px !important;
+
+        font-size: 9px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       PAN
+       ===================================================== */
+
+    #instrumentSettingsList
+    > div > div:nth-of-type(1) {
+
+        grid-column: 3 !important;
+
+        grid-row: 1 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        gap: 4px !important;
+
+        min-width: 0 !important;
+
+        width: 100% !important;
+    }
+
+
+    /* =====================================================
+       VOLUME
+       ===================================================== */
+
+    #instrumentSettingsList
+    > div > div:nth-of-type(2) {
+
+        grid-column: 4 !important;
+
+        grid-row: 1 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        gap: 4px !important;
+
+        min-width: 0 !important;
+
+        width: 100% !important;
+    }
+
+
+    /* ข้อความ Pan / ดัง */
+
+    #instrumentSettingsList
+    > div > div span {
+
+        width: auto !important;
+
+        min-width: 32px !important;
+
+        flex-shrink: 0 !important;
+
+        font-size: 6px !important;
+
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* Slider */
+
+    #instrumentSettingsList
+    > div input[type="range"] {
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: 12px !important;
+
+        padding: 0 !important;
+    }
+
+
+    /* =====================================================
+       PLAY
+       ===================================================== */
+
+    #instrumentSettingsList
+    > div > button[data-role="audition"] {
+
+        grid-column: 5 !important;
+
+        grid-row: 1 !important;
+
+        width: 32px !important;
+
+        height: 32px !important;
+
+        min-width: 32px !important;
+
+        min-height: 32px !important;
+
+        padding: 0 !important;
+
+        font-size: 10px !important;
+
+        border-radius: 6px !important;
+    }
+
+
+    /* Footer */
+
+    #instrumentSettingsModal
+    > div > div:last-child {
+
+        padding: 7px 9px !important;
+
+        gap: 6px !important;
+    }
+
+    #instrumentSettingsModal
+    > div > div:last-child > span {
+
+        font-size: 6px !important;
+
+        line-height: 1.2 !important;
+
+        max-width: 45% !important;
+    }
+
+    #instrumentSettingsModal
+    > div > div:last-child button {
+
+        padding: 6px 9px !important;
+
+        font-size: 7px !important;
+
+        white-space: nowrap !important;
+    }
+}
+
+
+/* =========================================================
+   มือถือจริง
+   <= 520px
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    #instrumentSettingsModal {
+        padding: 4px !important;
+    }
+
+    #instrumentSettingsModal > div {
+
+        width: 97% !important;
+
+        max-height: 92dvh !important;
+
+        border-radius: 13px !important;
+    }
+
+
+    /* Header */
+
+    #instrumentSettingsModal
+    > div > div:first-child {
+
+        padding: 7px 9px !important;
+    }
+
+    #instrumentSettingsModal h2 {
+
+        font-size: 11px !important;
+    }
+
+    #instrumentSettingsModal
+    > div > div:first-child button {
+
+        width: 27px !important;
+
+        height: 27px !important;
+
+        font-size: 11px !important;
+    }
+
+
+    /* รายการ */
+
+    #instrumentSettingsList {
+
+        padding: 5px !important;
+
+        gap: 4px !important;
+    }
+
+
+    /*
+       แถวบน:
+       ICON | NAME | PLAY
+
+       แถวล่าง:
+       PAN
+       VOL
+    */
+
+    #instrumentSettingsList > div {
+
+        grid-template-columns:
+            30px
+            minmax(0, 1fr)
+            30px !important;
+
+        grid-template-rows:
+            30px
+            25px
+            25px !important;
+
+        gap: 4px !important;
+
+        padding: 5px !important;
+
+        border-radius: 8px !important;
+    }
+
+
+    /* Icon */
+
+    #instrumentSettingsList
+    > div > input[data-role="icon"] {
+
+        grid-column: 1 !important;
+
+        grid-row: 1 !important;
+
+        width: 30px !important;
+
+        min-width: 30px !important;
+
+        height: 30px !important;
+
+        font-size: 14px !important;
+    }
+
+
+    /* Name */
+
+    #instrumentSettingsList
+    > div > input[data-role="name"] {
+
+        grid-column: 2 !important;
+
+        grid-row: 1 !important;
+
+        width: 100% !important;
+
+        height: 29px !important;
+
+        font-size: 8px !important;
+
+        padding: 3px 6px !important;
+    }
+
+
+    /* Play */
+
+    #instrumentSettingsList
+    > div > button[data-role="audition"] {
+
+        grid-column: 3 !important;
+
+        grid-row: 1 !important;
+
+        width: 30px !important;
+
+        min-width: 30px !important;
+
+        height: 30px !important;
+
+        min-height: 30px !important;
+
+        font-size: 9px !important;
+    }
+
+
+    /* Pan */
+
+    #instrumentSettingsList
+    > div > div:nth-of-type(1) {
+
+        grid-column: 1 / 4 !important;
+
+        grid-row: 2 !important;
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        gap: 5px !important;
+    }
+
+
+    /* Volume */
+
+    #instrumentSettingsList
+    > div > div:nth-of-type(2) {
+
+        grid-column: 1 / 4 !important;
+
+        grid-row: 3 !important;
+
+        width: 100% !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        gap: 5px !important;
+    }
+
+
+    /* Label */
+
+    #instrumentSettingsList
+    > div > div span {
+
+        min-width: 38px !important;
+
+        font-size: 7px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* Slider */
+
+    #instrumentSettingsList
+    > div input[type="range"] {
+
+        flex: 1 !important;
+
+        width: auto !important;
+
+        min-width: 0 !important;
+
+        height: 10px !important;
+    }
+
+
+    /* Footer */
+
+    #instrumentSettingsModal
+    > div > div:last-child {
+
+        padding: 6px !important;
+
+        gap: 5px !important;
+    }
+
+    #instrumentSettingsModal
+    > div > div:last-child > span {
+
+        font-size: 5px !important;
+
+        max-width: 45% !important;
+    }
+
+    #instrumentSettingsModal
+    > div > div:last-child button {
+
+        font-size: 6px !important;
+
+        padding: 5px 7px !important;
+    }
+}
+
+    /* =====================================================
+       MIDI EDITOR
+       ===================================================== */
+
+    #midiEditorModal > div {
+
+        max-height: 90vh !important;
+
+        border-radius: 16px !important;
+    }
+
+
+    /* เนื้อหา */
+
+    #midiEditorModal > div > div:nth-child(2) {
+
+        padding: 8px !important;
+
+        gap: 7px !important;
+
+        overflow-y: auto !important;
+    }
+
+
+    /* Toolbar */
+
+    #midiEditorModal > div > div:nth-child(2)
+    > div:first-child {
+
+        display: grid !important;
+
+        grid-template-columns:
+            1fr 1fr !important;
+
+        gap: 5px !important;
+
+        padding: 6px !important;
+
+        border-radius: 9px !important;
+    }
+
+
+    /* ปุ่มฟัง */
+
+    #midiEditorModal #editorPreviewBtn {
+
+        width: 100% !important;
+
+        padding: 6px !important;
+
+        font-size: 8px !important;
+
+        border-radius: 7px !important;
+    }
+
+
+    /* BPM */
+
+    #midiEditorModal #editorBpmInput {
+
+        width: 55px !important;
+
+        height: 28px !important;
+
+        font-size: 9px !important;
+
+        padding: 3px !important;
+    }
+
+
+    #midiEditorModal .text-xs {
+
+        font-size: 6px !important;
+    }
+
+
+    /* Time Signature */
+
+    #midiEditorModal #editorTimeSigSelect {
+
+        height: 28px !important;
+
+        font-size: 7px !important;
+
+        padding: 3px !important;
+
+        max-width: 120px !important;
+    }
+
+
+    /* Metronome */
+
+    #midiEditorModal #editorMetronomeBtn {
+
+        padding: 6px 7px !important;
+
+        font-size: 7px !important;
+
+        border-radius: 7px !important;
+    }
+
+
+    /* ชื่อ Pattern */
+
+    #midiEditorModal #editorPatternIcon {
+
+        width: 24px !important;
+
+        font-size: 13px !important;
+    }
+
+    #midiEditorModal #editorPatternNameInput {
+
+        width: 90px !important;
+
+        font-size: 8px !important;
+    }
+
+
+    /* ล้างตาราง */
+
+    #midiEditorModal button {
+
+        font-size: 7px !important;
+    }
+
+
+    /* =====================================================
+       ตาราง MIDI
+       ===================================================== */
+
+    #midiEditorModal > div > div:nth-child(2)
+    > div:nth-child(2) {
+
+        padding: 5px !important;
+
+        border-radius: 8px !important;
+
+        overflow-x: auto !important;
+    }
+
+
+    /* ลดความกว้างขั้นต่ำของ Grid */
+
+    #midiEditorModal #editorGrid {
+
+        min-width: 650px !important;
+    }
+
+
+    /* ช่องจังหวะ */
+
+    #midiEditorModal #editorGrid button {
+
+        height: 18px !important;
+
+        min-height: 18px !important;
+
+        border-radius: 4px !important;
+    }
+
+
+    /* ข้อความอธิบาย */
+
+    #midiEditorModal > div > div:nth-child(2)
+    > p {
+
+        font-size: 6px !important;
+
+        line-height: 1.25 !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* Export */
+
+    #midiEditorModal #editorExportCode {
+
+        font-size: 6px !important;
+
+        padding: 5px !important;
+    }
+
+    #midiEditorModal > div > div:nth-child(2)
+    > div:last-child {
+
+        padding: 6px !important;
+
+        border-radius: 8px !important;
+    }
+
+
+    /* Footer */
+
+    #midiEditorModal > div > div:last-child {
+
+        padding: 7px !important;
+
+        gap: 5px !important;
+    }
+
+    #midiEditorModal > div > div:last-child span {
+
+        font-size: 6px !important;
+
+        line-height: 1.2 !important;
+    }
+
+    #midiEditorModal > div > div:last-child button {
+
+        padding: 7px 10px !important;
+
+        font-size: 7px !important;
+
+        border-radius: 8px !important;
+    }
+
+
+    /* =====================================================
+       FX EDITOR
+       ===================================================== */
+
+    #fxEditModal > div {
+
+        max-width: 340px !important;
+
+        max-height: 82vh !important;
+    }
+
+
+    #fxEditModal > div > div:nth-child(2) {
+
+        padding: 10px !important;
+
+        gap: 8px !important;
+    }
+
+
+    #fxEditModal input {
+
+        font-size: 9px !important;
+    }
+
+
+    #fxEditModal #fxEditIcon {
+
+        width: 28px !important;
+
+        font-size: 14px !important;
+    }
+
+
+    #fxEditModal #fxEditName {
+
+        font-size: 9px !important;
+    }
+
+
+    #fxEditModal p {
+
+        font-size: 7px !important;
+
+        line-height: 1.2 !important;
+    }
+
+
+    #fxEditModal button {
+
+        font-size: 7px !important;
+
+        padding: 6px 8px !important;
+
+        border-radius: 7px !important;
+    }
+}
+
+
+
+/* =========================================================
+   MOBILE เล็กมาก
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    /* Modal */
+
+    #settingsModal,
+    #midiEditorModal,
+    #instrumentSettingsModal,
+    #fxEditModal {
+
+        padding: 5px !important;
+    }
+
+
+    #settingsModal > div,
+    #midiEditorModal > div,
+    #instrumentSettingsModal > div,
+    #fxEditModal > div {
+
+        max-height: 90vh !important;
+
+        border-radius: 14px !important;
+    }
+
+
+    /* Header */
+
+    #settingsModal h2,
+    #midiEditorModal h2,
+    #instrumentSettingsModal h2,
+    #fxEditModal h2 {
+
+        font-size: 12px !important;
+    }
+
+
+    /* Instrument settings */
+
+    #instrumentSettingsModal
+    #instrumentSettingsList > div {
+
+        grid-template-columns:
+            30px
+            minmax(65px, 1fr)
+            minmax(60px, 0.8fr)
+            27px !important;
+
+        gap: 3px !important;
+
+        padding: 4px !important;
+    }
+
+
+    #instrumentSettingsModal
+    #instrumentSettingsList
+    input[data-role="icon"] {
+
+        width: 30px !important;
+
+        height: 30px !important;
+
+        font-size: 14px !important;
+    }
+
+
+    #instrumentSettingsModal
+    #instrumentSettingsList
+    input[data-role="name"] {
+
+        height: 27px !important;
+
+        font-size: 8px !important;
+    }
+
+
+    #instrumentSettingsModal
+    #instrumentSettingsList
+    [data-role="pan"],
+    #instrumentSettingsModal
+    #instrumentSettingsList
+    [data-role="vol"] {
+
+        width: 50px !important;
+    }
+
+
+    #instrumentSettingsModal
+    #instrumentSettingsList
+    button[data-role="audition"] {
+
+        width: 27px !important;
+
+        height: 27px !important;
+    }
+
+
+    /* MIDI Editor */
+
+    #midiEditorModal #editorGrid {
+
+        min-width: 560px !important;
+    }
+
+    #midiEditorModal #editorGrid button {
+
+        height: 16px !important;
+
+        min-height: 16px !important;
+    }
+
+
+    #fxEditModal > div {
+
+        max-width: 320px !important;
+    }
+}
+
+
+
+/* =========================================================
+   CHORDDEELAP
+   DRUM PAD - MOBILE / IPAD
+   PC ไม่เปลี่ยน
+   ========================================================= */
+
+
+/* =========================================================
+   iPAD
+   769px - 1024px
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    #drumPadView {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 5rem 8px 12px !important;
+    }
+
+    #drumPadView > div {
+        padding: 12px !important;
+        border-radius: 16px !important;
+    }
+
+
+    /* Header */
+
+    #drumPadView > div > div:first-child {
+        margin-bottom: 10px !important;
+        padding-bottom: 10px !important;
+
+        gap: 8px !important;
+    }
+
+    #drumPadView h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.1 !important;
+    }
+
+    #drumPadView > div > div:first-child p {
+        font-size: 8px !important;
+        margin-top: 3px !important;
+    }
+
+    #drumPadView > div > div:first-child > div:first-child > span {
+        font-size: 7px !important;
+        padding: 3px 6px !important;
+    }
+
+
+    /* Header buttons */
+
+    #drumPadView > div > div:first-child > div:last-child {
+        gap: 5px !important;
+    }
+
+    #drumPadView > div > div:first-child button {
+        padding: 6px 9px !important;
+        font-size: 8px !important;
+        border-radius: 8px !important;
+    }
+
+
+    /* Drum grid */
+
+    #drumPadGrid {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+
+        gap: 5px !important;
+    }
+
+
+    /* Drum pad */
+
+    #drumPadGrid .pad-btn {
+        height: 95px !important;
+
+        min-width: 0 !important;
+
+        padding: 5px !important;
+
+        border-width: 1px !important;
+
+        border-radius: 10px !important;
+    }
+
+
+    /* Key */
+
+    #drumPadGrid .pad-btn > span:first-child {
+        font-size: 7px !important;
+
+        padding: 2px 4px !important;
+    }
+
+
+    /* Icon */
+
+    #drumPadGrid .pad-btn > div span {
+        font-size: 28px !important;
+    }
+
+    #drumPadGrid .pad-btn > div img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+
+    /* Name */
+
+    #drumPadGrid .pad-btn > span:last-child {
+        font-size: 8px !important;
+        line-height: 1 !important;
+    }
+}
+
+
+
+/* =========================================================
+   MOBILE
+   <= 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       PAGE
+       ===================================================== */
+
+    #drumPadView {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding:
+            3.5rem
+            3px
+            8px !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* กล่องหลัก */
+
+    #drumPadView > div {
+
+        width: 100% !important;
+
+        padding: 6px !important;
+
+        border-radius: 11px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    #drumPadView > div > div:first-child {
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto !important;
+
+        align-items: center !important;
+
+        gap: 5px !important;
+
+        margin-bottom: 6px !important;
+
+        padding-bottom: 6px !important;
+    }
+
+
+    /* ป้าย */
+
+    #drumPadView > div > div:first-child
+    > div:first-child > span {
+
+        font-size: 5px !important;
+
+        line-height: 1 !important;
+
+        padding: 2px 4px !important;
+
+        margin-bottom: 2px !important;
+    }
+
+
+    /* ชื่อ Drum Pad */
+
+    #drumPadView h1 {
+
+        font-size: 0.95rem !important;
+
+        line-height: 1.05 !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* คำอธิบาย */
+
+    #drumPadView > div > div:first-child p {
+
+        font-size: 5px !important;
+
+        line-height: 1.1 !important;
+
+        margin-top: 2px !important;
+    }
+
+
+    /* =====================================================
+       ปุ่มด้านขวา
+       ===================================================== */
+
+    #drumPadView > div > div:first-child
+    > div:last-child {
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        gap: 3px !important;
+    }
+
+
+    #drumPadView > div > div:first-child
+    > div:last-child button {
+
+        padding: 4px 6px !important;
+
+        font-size: 5px !important;
+
+        line-height: 1 !important;
+
+        border-radius: 6px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       15 PAD
+       
+       5 คอลัมน์
+       3 แถว
+       ===================================================== */
+
+    #drumPadGrid {
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr)) !important;
+
+        gap: 3px !important;
+
+        width: 100% !important;
+    }
+
+
+    /* =====================================================
+       PAD
+       ===================================================== */
+
+    #drumPadGrid .pad-btn {
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: 65px !important;
+
+        padding: 3px !important;
+
+        border-width: 1px !important;
+
+        border-radius: 7px !important;
+
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15) !important;
+    }
+
+
+    /* =====================================================
+       KEY Q W E...
+       ===================================================== */
+
+    #drumPadGrid .pad-btn > span:first-child {
+
+        font-size: 5px !important;
+
+        line-height: 1 !important;
+
+        padding: 2px 3px !important;
+
+        border-radius: 3px !important;
+    }
+
+
+    /* =====================================================
+       ICON
+       ===================================================== */
+
+    #drumPadGrid .pad-btn > div {
+
+        min-height: 0 !important;
+
+        line-height: 1 !important;
+    }
+
+
+    #drumPadGrid .pad-btn > div span {
+
+        font-size: 20px !important;
+
+        line-height: 1 !important;
+    }
+
+
+    #drumPadGrid .pad-btn > div img {
+
+        width: 25px !important;
+
+        height: 25px !important;
+    }
+
+
+    /* =====================================================
+       ชื่อ Kick / Snare / Hi-Hat...
+       ===================================================== */
+
+    #drumPadGrid .pad-btn > span:last-child {
+
+        font-size: 6px !important;
+
+        line-height: 1 !important;
+
+        width: 100% !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+
+        white-space: nowrap !important;
+    }
+}
+
+
+
+/* =========================================================
+   MOBILE เล็กมาก
+   <= 380px
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    #drumPadView {
+
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    }
+
+
+    #drumPadView > div {
+
+        padding: 4px !important;
+
+        border-radius: 9px !important;
+    }
+
+
+    /* Header */
+
+    #drumPadView h1 {
+
+        font-size: 0.85rem !important;
+    }
+
+    #drumPadView > div > div:first-child p {
+
+        font-size: 4.5px !important;
+    }
+
+
+    #drumPadView > div > div:first-child
+    > div:last-child button {
+
+        font-size: 4.5px !important;
+
+        padding: 3px 5px !important;
+    }
+
+
+    /* Grid */
+
+    #drumPadGrid {
+
+        gap: 2px !important;
+    }
+
+
+    /* Pad */
+
+    #drumPadGrid .pad-btn {
+
+        height: 57px !important;
+
+        padding: 2px !important;
+
+        border-radius: 6px !important;
+    }
+
+
+    /* Key */
+
+    #drumPadGrid .pad-btn > span:first-child {
+
+        font-size: 4px !important;
+
+        padding: 1px 2px !important;
+    }
+
+
+    /* Icon */
+
+    #drumPadGrid .pad-btn > div span {
+
+        font-size: 17px !important;
+    }
+
+    #drumPadGrid .pad-btn > div img {
+
+        width: 21px !important;
+
+        height: 21px !important;
+    }
+
+
+    /* Name */
+
+    #drumPadGrid .pad-btn > span:last-child {
+
+        font-size: 5px !important;
+    }
+}
+
+/* =========================================
+   DRUM PAD: หน้าต่างตั้งค่าชิ้นกลอง
+   ปรับเฉพาะมือถือ / iPad
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    /* กล่องหน้าต่าง */
+    #settingsModal {
+        padding: 8px !important;
+    }
+
+    #settingsModal > div {
+        width: 100% !important;
+        max-width: 760px !important;
+        max-height: 90dvh !important;
+        border-radius: 16px !important;
+    }
+
+    /* หัวหน้าต่าง */
+    #settingsModal > div > div:first-child {
+        padding: 9px 12px !important;
+        gap: 8px !important;
+    }
+
+    #settingsModal h2 {
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+    }
+
+    #settingsModal > div > div:first-child p {
+        font-size: 9px !important;
+        line-height: 1.25 !important;
+        margin-top: 3px !important;
+    }
+
+    #settingsModal > div > div:first-child button {
+        width: 30px !important;
+        height: 30px !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* พื้นที่รายการ */
+    #settingsList {
+        padding: 8px !important;
+        gap: 0 !important;
+    }
+
+    /* แต่ละชิ้นกลอง */
+    #settingsList > div {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        gap: 6px !important;
+    }
+
+    /* แถวชื่อ / รูป / ลองเสียง */
+    #settingsList > div > div:first-child {
+        gap: 5px !important;
+        width: 100% !important;
+    }
+
+    /* ปุ่มคีย์ */
+    #settingsList > div > div:first-child > span {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 10px !important;
+        border-radius: 6px !important;
+    }
+
+    /* ไอคอนกลอง */
+    #settingsList img,
+    #settingsList > div > div:first-child
+    > div > span {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 16px !important;
+    }
+
+    /* ปุ่มเลือกรูป */
+    #settingsList label {
+        font-size: 8px !important;
+        padding: 5px 6px !important;
+        white-space: nowrap !important;
+    }
+
+    /* ช่องชื่อกลอง */
+    #settingsList input[type="text"] {
+        min-width: 0 !important;
+        height: 32px !important;
+        padding: 5px 7px !important;
+        font-size: 10px !important;
+    }
+
+    /* ปุ่มลองเสียง */
+    #settingsList button {
+        padding: 6px 8px !important;
+        font-size: 9px !important;
+        white-space: nowrap !important;
+    }
+
+    /* กล่อง Vol / Pan */
+    #settingsList > div > div:last-child {
+        width: 100% !important;
+        gap: 10px !important;
+        padding: 7px 9px !important;
+        border-radius: 10px !important;
+    }
+
+    #settingsList > div > div:last-child > div {
+        gap: 6px !important;
+        min-width: 0 !important;
+    }
+
+    #settingsList > div > div:last-child span {
+        font-size: 9px !important;
+    }
+
+    #settingsList input[type="range"] {
+        min-width: 0 !important;
+        height: 14px !important;
+    }
+
+    /* แถบด้านล่าง */
+    #settingsModal > div > div:last-child {
+        padding: 8px 10px !important;
+        gap: 8px !important;
+    }
+
+    #settingsModal > div > div:last-child button {
+        font-size: 9px !important;
+        padding: 7px 10px !important;
+        border-radius: 8px !important;
+    }
+}
+
+
+/* =========================================
+   มือถือจอแคบ
+   ========================================= */
+
+@media (max-width: 520px) {
+
+    #settingsModal {
+        padding: 5px !important;
+    }
+
+    #settingsModal > div {
+        max-height: 92dvh !important;
+        border-radius: 12px !important;
+    }
+
+    #settingsModal > div > div:first-child {
+        padding: 8px !important;
+    }
+
+    #settingsModal h2 {
+        font-size: 12px !important;
+    }
+
+    #settingsModal > div > div:first-child p {
+        font-size: 8px !important;
+    }
+
+    #settingsList {
+        padding: 6px !important;
+    }
+
+    #settingsList > div {
+        padding-top: 7px !important;
+        padding-bottom: 7px !important;
+        gap: 5px !important;
+    }
+
+    /* จัดแถวบนให้พอดีกับจอแคบ */
+    #settingsList > div > div:first-child {
+        display: grid !important;
+        grid-template-columns: 25px 68px minmax(0, 1fr) 58px !important;
+        gap: 4px !important;
+        align-items: center !important;
+    }
+
+    #settingsList > div > div:first-child > span {
+        width: 25px !important;
+        height: 26px !important;
+        font-size: 9px !important;
+    }
+
+    #settingsList > div > div:first-child > div {
+        gap: 3px !important;
+    }
+
+    #settingsList img,
+    #settingsList > div > div:first-child
+    > div > span {
+        width: 27px !important;
+        height: 27px !important;
+        font-size: 14px !important;
+    }
+
+    #settingsList label {
+        padding: 4px !important;
+        font-size: 7px !important;
+    }
+
+    #settingsList input[type="text"] {
+        width: 100% !important;
+        height: 29px !important;
+        font-size: 9px !important;
+        padding: 4px 5px !important;
+    }
+
+    #settingsList button {
+        font-size: 7px !important;
+        padding: 6px 4px !important;
+    }
+
+    /* Vol / Pan ยังอยู่แถวเดียวกัน */
+    #settingsList > div > div:last-child {
+        gap: 6px !important;
+        padding: 6px !important;
+    }
+
+    #settingsList > div > div:last-child > div {
+        gap: 4px !important;
+    }
+
+    #settingsList > div > div:last-child span {
+        font-size: 8px !important;
+    }
+
+    /* Footer */
+    #settingsModal > div > div:last-child button {
+        font-size: 8px !important;
+        padding: 6px 8px !important;
+    }
+}
+
+
+
+/* =========================================================
+   MIDI EDITOR
+   MOBILE / IPAD COMPACT
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* =========================================
+       Modal หลัก
+       ========================================= */
+
+    #midiEditorModal {
+        padding: 6px !important;
+    }
+
+    #midiEditorModal > div {
+        width: 96% !important;
+        max-width: 900px !important;
+        max-height: 92dvh !important;
+
+        border-radius: 15px !important;
+    }
+
+
+    /* =========================================
+       Header
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:first-child {
+
+        padding: 8px 11px !important;
+
+        min-height: 42px !important;
+    }
+
+    #midiEditorModal h2 {
+
+        font-size: 13px !important;
+
+        line-height: 1.1 !important;
+    }
+
+    #midiEditorModal
+    > div > div:first-child button {
+
+        width: 29px !important;
+        height: 29px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    /* =========================================
+       พื้นที่เนื้อหา
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:nth-child(2) {
+
+        padding: 7px !important;
+
+        gap: 7px !important;
+
+        overflow-y: auto !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* =========================================
+       TOOLBAR
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:first-child {
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto
+            auto !important;
+
+        gap: 5px !important;
+
+        padding: 7px !important;
+
+        border-radius: 9px !important;
+    }
+
+
+    /* ฟังตัวอย่าง */
+
+    #editorPreviewBtn {
+
+        padding: 7px 9px !important;
+
+        font-size: 8px !important;
+
+        border-radius: 8px !important;
+
+        min-width: 0 !important;
+    }
+
+
+    /* BPM */
+
+    #midiEditorModal
+    #editorBpmInput {
+
+        width: 45px !important;
+
+        height: 28px !important;
+
+        padding: 3px !important;
+
+        font-size: 9px !important;
+    }
+
+
+    /* label BPM */
+
+    #midiEditorModal
+    #editorBpmInput
+    ~ span {
+
+        font-size: 6px !important;
+    }
+
+
+    /* Time signature */
+
+    #editorTimeSigSelect {
+
+        height: 28px !important;
+
+        max-width: 100px !important;
+
+        padding: 3px 5px !important;
+
+        font-size: 7px !important;
+    }
+
+
+    /* Metronome */
+
+    #editorMetronomeBtn {
+
+        padding: 6px 8px !important;
+
+        font-size: 7px !important;
+
+        border-radius: 7px !important;
+    }
+
+
+    /* ชื่อ Pattern */
+
+    #midiEditorModal
+    #editorPatternIcon {
+
+        width: 24px !important;
+
+        font-size: 12px !important;
+    }
+
+    #midiEditorModal
+    #editorPatternNameInput {
+
+        width: 100px !important;
+
+        font-size: 8px !important;
+    }
+
+
+    /* ล้างตาราง */
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:first-child
+    > button:last-child {
+
+        margin-left: 0 !important;
+
+        padding: 6px 8px !important;
+
+        font-size: 7px !important;
+
+        border-radius: 7px !important;
+    }
+
+
+    /* =========================================
+       MIDI GRID
+       ========================================= */
+
+    #midiEditorModal
+    #editorGrid {
+
+        min-width: 0 !important;
+
+        width: 100% !important;
+    }
+
+
+    #midiEditorModal
+    #editorGrid > * {
+
+        max-width: 100% !important;
+    }
+
+
+    /* กล่อง Grid */
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:nth-child(2) {
+
+        padding: 6px !important;
+
+        overflow-x: hidden !important;
+
+        border-radius: 9px !important;
+    }
+
+
+    /* =========================================
+       คำอธิบายใต้ Grid
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > p {
+
+        font-size: 6px !important;
+
+        line-height: 1.25 !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* =========================================
+       EXPORT
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:nth-child(4) {
+
+        padding: 6px !important;
+
+        border-radius: 8px !important;
+    }
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:nth-child(4)
+    span {
+
+        font-size: 7px !important;
+    }
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:nth-child(4)
+    button {
+
+        font-size: 7px !important;
+    }
+
+    #editorExportCode {
+
+        font-size: 6px !important;
+
+        padding: 5px !important;
+
+        rows: 3 !important;
+    }
+
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:last-child {
+
+        padding: 7px 9px !important;
+
+        gap: 6px !important;
+    }
+
+    #midiEditorModal
+    > div > div:last-child span {
+
+        font-size: 5px !important;
+
+        line-height: 1.2 !important;
+
+        max-width: 48% !important;
+    }
+
+    #midiEditorModal
+    > div > div:last-child button {
+
+        padding: 7px 10px !important;
+
+        font-size: 7px !important;
+
+        border-radius: 8px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    #midiEditorModal {
+        padding: 3px !important;
+    }
+
+    #midiEditorModal > div {
+
+        width: 98% !important;
+
+        max-height: 94dvh !important;
+
+        border-radius: 12px !important;
+    }
+
+
+    /* Header */
+
+    #midiEditorModal
+    > div > div:first-child {
+
+        padding: 7px 9px !important;
+    }
+
+    #midiEditorModal h2 {
+
+        font-size: 10px !important;
+    }
+
+
+    /* =========================================
+       Toolbar
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:first-child {
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            48px
+            auto !important;
+
+        gap: 4px !important;
+
+        padding: 5px !important;
+    }
+
+
+    #editorPreviewBtn {
+
+        width: 100% !important;
+
+        height: 28px !important;
+
+        padding: 4px !important;
+
+        font-size: 7px !important;
+    }
+
+
+    /* BPM */
+
+    #midiEditorModal
+    #editorBpmInput {
+
+        width: 42px !important;
+
+        height: 27px !important;
+
+        font-size: 8px !important;
+    }
+
+
+    /* Time signature */
+
+    #editorTimeSigSelect {
+
+        width: 88px !important;
+
+        max-width: 88px !important;
+
+        height: 27px !important;
+
+        font-size: 6px !important;
+    }
+
+
+    /* Metronome */
+
+    #editorMetronomeBtn {
+
+        grid-column: 3 !important;
+
+        padding: 5px !important;
+
+        font-size: 6px !important;
+    }
+
+
+    /* Pattern */
+
+    #midiEditorModal
+    #editorPatternIcon {
+
+        width: 20px !important;
+
+        font-size: 10px !important;
+    }
+
+    #midiEditorModal
+    #editorPatternNameInput {
+
+        width: 75px !important;
+
+        font-size: 7px !important;
+    }
+
+
+    /* ล้าง */
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:first-child
+    > button:last-child {
+
+        padding: 5px !important;
+
+        font-size: 6px !important;
+    }
+
+
+    /* =========================================
+       GRID
+       ========================================= */
+
+    #midiEditorModal
+    #editorGrid {
+
+        min-width: 0 !important;
+
+        width: 100% !important;
+    }
+
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:nth-child(2) {
+
+        width: 100% !important;
+
+        padding: 4px !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =========================================
+       คำอธิบาย
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > p {
+
+        font-size: 5px !important;
+
+        line-height: 1.15 !important;
+    }
+
+
+    /* =========================================
+       Export
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:nth-child(4) {
+
+        padding: 5px !important;
+    }
+
+    #midiEditorModal
+    > div > div:nth-child(2)
+    > div:nth-child(4) span {
+
+        font-size: 6px !important;
+    }
+
+    #editorExportCode {
+
+        height: 45px !important;
+
+        font-size: 5px !important;
+
+        padding: 4px !important;
+    }
+
+
+    /* =========================================
+       Footer
+       ========================================= */
+
+    #midiEditorModal
+    > div > div:last-child {
+
+        padding: 6px !important;
+    }
+
+    #midiEditorModal
+    > div > div:last-child span {
+
+        font-size: 4.5px !important;
+
+        max-width: 45% !important;
+    }
+
+    #midiEditorModal
+    > div > div:last-child button {
+
+        padding: 6px 8px !important;
+
+        font-size: 6px !important;
+    }
+}
+
+
+
+
+
+
+
+/* =========================================================
+   HOME PAGE + POPULAR SONGS
+   MOBILE / IPAD
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* =========================
+       หน้าแรก
+       ========================= */
+
+    #homeView {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    #homeView > section:first-child {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        padding-top: 90px !important;
+        padding-bottom: 25px !important;
+
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* หัวข้อหลัก */
+    #homeView > section:first-child h1 {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+
+        margin-bottom: 12px !important;
+    }
+
+    /* คำอธิบาย */
+    #homeView > section:first-child > p {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+
+        max-width: 600px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        margin-bottom: 18px !important;
+    }
+
+    /* Badge */
+    #homeView > section:first-child > span {
+        font-size: 8px !important;
+
+        padding: 5px 9px !important;
+
+        margin-bottom: 10px !important;
+    }
+
+    /* ช่องค้นหา */
+    #homeView #searchInput {
+        font-size: 11px !important;
+
+        padding-top: 9px !important;
+        padding-bottom: 9px !important;
+    }
+
+    #homeView > section:first-child
+    > div.max-w-2xl {
+        width: 100% !important;
+        max-width: 620px !important;
+
+        box-sizing: border-box;
+
+        padding: 5px !important;
+    }
+
+    /* คำค้นยอดฮิต */
+    #homeView > section:first-child
+    > div.flex.flex-wrap {
+        font-size: 8px !important;
+
+        gap: 5px !important;
+
+        max-width: 100% !important;
+    }
+
+
+    /* =========================
+       เครื่องเล่นกลองหน้าแรก
+       ========================= */
+
+    #drum-preset {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box;
+
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    #drum-preset > div {
+        border-radius: 16px !important;
+
+        padding: 14px !important;
+    }
+
+    #drum-preset h2 {
+        font-size: 16px !important;
+    }
+
+    #drum-preset p {
+        font-size: 8px !important;
+    }
+
+    #drum-preset .text-xs {
+        font-size: 7px !important;
+    }
+
+    #drum-preset .text-sm {
+        font-size: 9px !important;
+    }
+
+    #mainPlayBtn {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    #mainPlayBtn svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =========================
+       หน้าแรก
+       ========================= */
+
+    #homeView {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* Hero */
+
+    #homeView > section:first-child {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding-top: 72px !important;
+        padding-bottom: 12px !important;
+
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+
+    /* Badge */
+
+    #homeView > section:first-child > span {
+
+        font-size: 6px !important;
+
+        padding: 3px 6px !important;
+
+        margin-bottom: 6px !important;
+
+        letter-spacing: .02em !important;
+    }
+
+
+    /* หัวข้อ */
+
+    #homeView > section:first-child h1 {
+
+        font-size: 21px !important;
+
+        line-height: 1.18 !important;
+
+        letter-spacing: -.02em !important;
+
+        margin-bottom: 7px !important;
+    }
+
+
+    /* คำอธิบาย */
+
+    #homeView > section:first-child > p {
+
+        font-size: 7px !important;
+
+        line-height: 1.45 !important;
+
+        max-width: 330px !important;
+
+        margin-bottom: 10px !important;
+    }
+
+
+    /* Search */
+
+    #homeView > section:first-child
+    > div.max-w-2xl {
+
+        width: 100% !important;
+
+        max-width: 360px !important;
+
+        padding: 3px !important;
+
+        border-radius: 10px !important;
+    }
+
+    #homeView #searchInput {
+
+        font-size: 7px !important;
+
+        padding: 7px 3px !important;
+    }
+
+    #homeView > section:first-child
+    svg {
+
+        width: 13px !important;
+
+        height: 13px !important;
+
+        margin-left: 6px !important;
+
+        margin-right: 4px !important;
+    }
+
+
+    /* Tags */
+
+    #homeView > section:first-child
+    > div.flex.flex-wrap {
+
+        font-size: 5px !important;
+
+        gap: 3px !important;
+
+        margin-top: 5px !important;
+    }
+
+
+    /* =========================
+       เครื่องเล่นกลอง
+       ========================= */
+
+    #drum-preset {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding-left: 5px !important;
+
+        padding-right: 5px !important;
+
+        margin-top: 5px !important;
+
+        margin-bottom: 5px !important;
+    }
+
+    #drum-preset > div {
+
+        padding: 9px !important;
+
+        border-radius: 11px !important;
+    }
+
+
+    /* Live Rhythm */
+
+    #drum-preset .text-xs {
+
+        font-size: 5px !important;
+    }
+
+
+    #drum-preset h2 {
+
+        font-size: 11px !important;
+
+        line-height: 1.2 !important;
+    }
+
+
+    #drum-preset p {
+
+        font-size: 6px !important;
+
+        margin-top: 2px !important;
+    }
+
+
+    /* Control */
+
+    #drum-preset
+    .flex.flex-wrap.items-center {
+
+        gap: 5px !important;
+
+        padding: 5px !important;
+
+        border-radius: 8px !important;
+    }
+
+
+    #mainPlayBtn {
+
+        width: 30px !important;
+
+        height: 30px !important;
+
+        border-radius: 7px !important;
+    }
+
+    #mainPlayBtn svg {
+
+        width: 13px !important;
+
+        height: 13px !important;
+    }
+
+
+    #drumStyleSelect {
+
+        font-size: 6px !important;
+
+        max-width: 110px !important;
+    }
+
+
+    #drum-preset label {
+
+        font-size: 5px !important;
+    }
+
+
+    #bpmValue {
+
+        font-size: 6px !important;
+    }
+
+
+    #bpmSlider {
+
+        height: 3px !important;
+    }
+
+
+    /* =====================================================
+       หน้าเพลงยอดนิยม
+       ===================================================== */
+
+    #popular-songs {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding-top: 12px !important;
+
+        padding-bottom: 20px !important;
+
+        padding-left: 7px !important;
+
+        padding-right: 7px !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* หัวข้อ */
+
+    #popular-songs h2 {
+
+        font-size: 13px !important;
+
+        line-height: 1.2 !important;
+
+        margin: 0 !important;
+    }
+
+
+    #popular-songs p {
+
+        font-size: 6px !important;
+
+        line-height: 1.3 !important;
+
+        margin-top: 2px !important;
+    }
+
+
+    /* Header ของเพลง */
+
+    #popular-songs
+    > div:first-child {
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+
+        gap: 5px !important;
+
+        margin-bottom: 8px !important;
+    }
+
+
+    /* หมวดเพลง */
+
+    #popular-songs
+    > div:first-child
+    > div:last-child {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        display: flex !important;
+
+        gap: 2px !important;
+
+        overflow-x: auto !important;
+
+        overflow-y: hidden !important;
+
+        padding-bottom: 2px !important;
+
+        scrollbar-width: none !important;
+    }
+
+    #popular-songs
+    > div:first-child
+    > div:last-child::-webkit-scrollbar {
+
+        display: none !important;
+    }
+
+
+    #popular-songs .tab-btn {
+
+        flex-shrink: 0 !important;
+
+        font-size: 6px !important;
+
+        padding: 4px 8px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       การ์ดเพลง
+       ===================================================== */
+
+    #songGrid {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 5px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    #songGrid > * {
+
+        min-width: 0 !important;
+
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        overflow: hidden !important;
+    }
+}
+
+
+/* =========================================================
+   มือถือจอเล็กมาก
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    #homeView > section:first-child {
+
+        padding-left: 6px !important;
+
+        padding-right: 6px !important;
+
+        padding-top: 68px !important;
+    }
+
+
+    #homeView > section:first-child h1 {
+
+        font-size: 18px !important;
+    }
+
+
+    #homeView > section:first-child > p {
+
+        font-size: 6px !important;
+
+        max-width: 300px !important;
+    }
+
+
+    #drum-preset > div {
+
+        padding: 7px !important;
+    }
+
+
+    #drum-preset h2 {
+
+        font-size: 10px !important;
+    }
+
+
+    #popular-songs {
+
+        padding-left: 5px !important;
+
+        padding-right: 5px !important;
+    }
+
+
+    #popular-songs h2 {
+
+        font-size: 12px !important;
+    }
+
+
+    #songGrid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 4px !important;
+    }
+}/* =========================================================
+   SONG CARD - MOBILE / IPAD
+   ลดขนาดข้อความภายในการ์ดเพลง
+   PC ไม่เปลี่ยน
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    #songGrid > div {
+
+        padding: 10px !important;
+
+        border-radius: 10px !important;
+
+        min-width: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* Pop 4/4 / Rock / Acoustic Bossa */
+
+    #songGrid > div .bg-orange-100 {
+
+        font-size: 6px !important;
+
+        padding: 3px 5px !important;
+
+        border-radius: 5px !important;
+
+        line-height: 1.1 !important;
+
+        white-space: nowrap !important;
+
+        max-width: 70% !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+    }
+
+
+    /* คีย์ */
+
+    #songGrid > div
+    .text-slate-400 {
+
+        font-size: 6px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* ชื่อเพลง */
+
+    #songGrid > div h3 {
+
+        font-size: 11px !important;
+
+        line-height: 1.25 !important;
+
+        margin-top: 3px !important;
+
+        margin-bottom: 0 !important;
+
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+    }
+
+
+    /* ศิลปิน */
+
+    #songGrid > div
+    p.text-slate-500 {
+
+        font-size: 7px !important;
+
+        line-height: 1.2 !important;
+
+        margin-top: 3px !important;
+
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+    }
+
+
+    /* เส้น + Tempo + เล่นจังหวะ */
+
+    #songGrid > div
+    > div:last-child {
+
+        margin-top: 7px !important;
+
+        padding-top: 6px !important;
+
+        font-size: 6px !important;
+
+        gap: 4px !important;
+    }
+
+
+    /* Tempo */
+
+    #songGrid > div
+    > div:last-child span {
+
+        font-size: 6px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* 75 BPM */
+
+    #songGrid > div
+    > div:last-child strong {
+
+        font-size: 6px !important;
+    }
+
+
+    /* เล่นจังหวะ */
+
+    #songGrid > div
+    > div:last-child button {
+
+        font-size: 6px !important;
+
+        white-space: nowrap !important;
+
+        padding: 0 !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #songGrid > div {
+
+        padding: 7px !important;
+
+        border-radius: 8px !important;
+    }
+
+
+    /* แนวเพลง */
+
+    #songGrid > div .bg-orange-100 {
+
+        font-size: 5px !important;
+
+        padding: 2px 4px !important;
+
+        border-radius: 4px !important;
+    }
+
+
+    /* คีย์ */
+
+    #songGrid > div
+    .text-slate-400 {
+
+        font-size: 5px !important;
+    }
+
+
+    /* ชื่อเพลง */
+
+    #songGrid > div h3 {
+
+        font-size: 9px !important;
+
+        line-height: 1.2 !important;
+
+        margin-top: 3px !important;
+    }
+
+
+    /* ศิลปิน */
+
+    #songGrid > div
+    p.text-slate-500 {
+
+        font-size: 6px !important;
+
+        margin-top: 2px !important;
+    }
+
+
+    /* ส่วนล่าง */
+
+    #songGrid > div
+    > div:last-child {
+
+        margin-top: 5px !important;
+
+        padding-top: 5px !important;
+
+        font-size: 5px !important;
+    }
+
+
+    #songGrid > div
+    > div:last-child span {
+
+        font-size: 5px !important;
+    }
+
+
+    #songGrid > div
+    > div:last-child strong {
+
+        font-size: 5px !important;
+    }
+
+
+    #songGrid > div
+    > div:last-child button {
+
+        font-size: 5px !important;
+    }
+}
+
+
+/* =========================================================
+   มือถือจอเล็ก
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    #songGrid > div {
+
+        padding: 6px !important;
+
+        border-radius: 7px !important;
+    }
+
+
+    #songGrid > div h3 {
+
+        font-size: 8px !important;
+    }
+
+
+    #songGrid > div
+    p.text-slate-500 {
+
+        font-size: 5.5px !important;
+    }
+
+
+    #songGrid > div .bg-orange-100 {
+
+        font-size: 4.5px !important;
+    }
+
+
+    #songGrid > div
+    .text-slate-400 {
+
+        font-size: 4.5px !important;
+    }
+
+
+    #songGrid > div
+    > div:last-child {
+
+        font-size: 4.5px !important;
+    }
+
+    #songGrid > div
+    > div:last-child span,
+    #songGrid > div
+    > div:last-child strong,
+    #songGrid > div
+    > div:last-child button {
+
+        font-size: 4.5px !important;
+    }
+}
+/* =========================================================
+   หน้าแรก - MOBILE COMPACT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -------------------------
+       พื้นที่หน้าแรก
+       ------------------------- */
+
+    #homeView {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    #homeView > section:first-child {
+
+        padding-top: 68px !important;
+        padding-bottom: 15px !important;
+
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* -------------------------
+       ป้ายด้านบน
+       ------------------------- */
+
+    #homeView > section:first-child > span {
+
+        font-size: 5px !important;
+
+        padding: 3px 6px !important;
+
+        margin-bottom: 6px !important;
+
+        line-height: 1.2 !important;
+
+        border-radius: 20px !important;
+    }
+
+
+    /* -------------------------
+       หัวข้อใหญ่
+       ------------------------- */
+
+    #homeView > section:first-child h1 {
+
+        font-size: 19px !important;
+
+        line-height: 1.2 !important;
+
+        letter-spacing: -0.02em !important;
+
+        margin-bottom: 6px !important;
+    }
+
+
+    /* -------------------------
+       ข้อความอธิบาย
+       ------------------------- */
+
+    #homeView > section:first-child > p {
+
+        font-size: 6px !important;
+
+        line-height: 1.4 !important;
+
+        max-width: 340px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        margin-bottom: 9px !important;
+    }
+
+
+    /* -------------------------
+       ช่องค้นหา
+       ------------------------- */
+
+    #homeView > section:first-child
+    > div.max-w-2xl {
+
+        width: 100% !important;
+
+        max-width: 360px !important;
+
+        padding: 3px !important;
+
+        border-radius: 10px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    #homeView #searchInput {
+
+        width: 100% !important;
+
+        height: 30px !important;
+
+        padding: 5px 5px !important;
+
+        font-size: 7px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    #homeView > section:first-child
+    > div.max-w-2xl svg {
+
+        width: 13px !important;
+
+        height: 13px !important;
+
+        margin-left: 5px !important;
+
+        margin-right: 3px !important;
+    }
+
+
+    /* -------------------------
+       คำค้นยอดนิยม
+       ------------------------- */
+
+    #homeView > section:first-child
+    > div.flex.flex-wrap {
+
+        font-size: 5px !important;
+
+        gap: 3px !important;
+
+        margin-top: 5px !important;
+
+        line-height: 1.2 !important;
+    }
+}
+
+
+/* =========================================================
+   มือถือจอเล็กมาก
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    #homeView > section:first-child {
+
+        padding-top: 64px !important;
+
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+
+    #homeView > section:first-child h1 {
+
+        font-size: 17px !important;
+    }
+
+
+    #homeView > section:first-child > p {
+
+        font-size: 5.5px !important;
+
+        max-width: 300px !important;
+    }
+
+
+    #homeView > section:first-child > span {
+
+        font-size: 4.5px !important;
+
+        padding: 2px 5px !important;
+    }
+
+
+    #homeView > section:first-child
+    > div.max-w-2xl {
+
+        max-width: 340px !important;
+
+        padding: 2px !important;
+
+        border-radius: 8px !important;
+    }
+
+
+    #homeView #searchInput {
+
+        height: 27px !important;
+
+        font-size: 6px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* กล่องเมนูมือถือ */
+    #mobileMenu,
+    .mobile-menu {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding: 10px 8px 12px !important;
+
+        background: #ffffff !important;
+
+        border-top: 1px solid #e2e8f0 !important;
+
+        box-shadow: 0 8px 20px rgba(0,0,0,.08) !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* รายการเมนู */
+
+    #mobileMenu a,
+    #mobileMenu button,
+    .mobile-menu a,
+    .mobile-menu button {
+
+        font-size: 13px !important;
+
+        line-height: 1.2 !important;
+
+        padding: 7px 6px !important;
+
+        min-height: 34px !important;
+
+        border-radius: 8px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* พื้นที่รายการเมนูหลัก */
+
+    #mobileMenu .menu-links,
+    .mobile-menu .menu-links {
+
+        display: grid !important;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 2px 5px !important;
+
+        width: 100% !important;
+
+        margin-bottom: 8px !important;
+    }
+
+
+    /* ปุ่ม Login / Register */
+
+    #mobileMenu .auth-buttons,
+    .mobile-menu .auth-buttons {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 7px !important;
+
+        width: 100% !important;
+
+        padding-top: 8px !important;
+
+        border-top: 1px solid #e2e8f0 !important;
+    }
+
+
+    #mobileMenu .auth-buttons button,
+    .mobile-menu .auth-buttons button {
+
+        width: 100% !important;
+
+        min-height: 38px !important;
+
+        font-size: 11px !important;
+
+        padding: 7px 5px !important;
+
+        border-radius: 10px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE จอเล็ก
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    #mobileMenu,
+    .mobile-menu {
+
+        padding: 8px 6px 10px !important;
+    }
+
+
+    #mobileMenu a,
+    #mobileMenu button,
+    .mobile-menu a,
+    .mobile-menu button {
+
+        font-size: 10px !important;
+
+        min-height: 32px !important;
+
+        padding: 6px 5px !important;
+    }
+
+
+    #mobileMenu .auth-buttons button,
+    .mobile-menu .auth-buttons button {
+
+        font-size: 10px !important;
+
+        min-height: 35px !important;
+    }
+}
+
+/* =========================================================
+   RHYTHM LIBRARY
+   MOBILE REAL DEVICE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =========================================
+       ตัวหน้าหลัก
+       ========================================= */
+
+    #rhythmLibraryView {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding-top: 82px !important;
+        padding-bottom: 20px !important;
+
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+
+        margin: 0 !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* =========================================
+       กล่องสีเข้มหลัก
+       ========================================= */
+
+    #rhythmLibraryView > div {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding: 12px !important;
+
+        border-radius: 18px !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* =========================================
+       HEADER
+       ========================================= */
+
+    #rhythmLibraryView h1 {
+
+        font-size: 20px !important;
+
+        line-height: 1.25 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 5px !important;
+
+        letter-spacing: -0.01em !important;
+    }
+
+
+    #rhythmLibraryView h1 + p {
+
+        font-size: 8px !important;
+
+        line-height: 1.45 !important;
+
+        margin-top: 2px !important;
+    }
+
+
+    /* Badge */
+
+    #rhythmLibraryView h1
+    ~ span {
+
+        font-size: 6px !important;
+    }
+
+
+    /* =========================================
+       เพลงช้า / เพลงเร็ว
+       ========================================= */
+
+    #rhythmLibraryView .flex.bg-slate-800 {
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding: 3px !important;
+
+        border-radius: 10px !important;
+
+        gap: 2px !important;
+
+        margin-top: 8px !important;
+    }
+
+
+    #rhythmLibraryView .flex.bg-slate-800 button {
+
+        min-width: 0 !important;
+
+        height: 34px !important;
+
+        padding: 4px 5px !important;
+
+        border-radius: 8px !important;
+
+        font-size: 8px !important;
+
+        line-height: 1.1 !important;
+    }
+
+
+    /* =========================================
+       เส้นแบ่ง
+       ========================================= */
+
+    #rhythmLibraryView
+    .border-b.border-slate-600 {
+
+        margin-bottom: 10px !important;
+
+        padding-bottom: 10px !important;
+    }
+
+
+    /* =========================================
+       CONTROL PANEL
+       ========================================= */
+
+    #rhythmLibraryView
+    .bg-slate-800\/80 {
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        padding: 9px !important;
+
+        margin-bottom: 10px !important;
+
+        border-radius: 12px !important;
+
+        gap: 7px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+    }
+
+
+    /* =========================================
+       Play + Status
+       ========================================= */
+
+    #rhythmLibraryView
+    #rhythmPlayBtn {
+
+        width: 42px !important;
+
+        height: 42px !important;
+
+        border-radius: 10px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    #rhythmLibraryView
+    #rhythmPlayIcon {
+
+        width: 19px !important;
+
+        height: 19px !important;
+    }
+
+
+    #rhythmLibraryView
+    #activePatternName {
+
+        font-size: 7px !important;
+
+        line-height: 1.2 !important;
+    }
+
+
+    #rhythmLibraryView
+    #rhythmStatusText {
+
+        font-size: 9px !important;
+
+        line-height: 1.2 !important;
+    }
+
+
+    /* จุดไฟ */
+
+    #rhythmLibraryView
+    #beatPulseDot {
+
+        width: 7px !important;
+
+        height: 7px !important;
+    }
+
+
+    /* =========================================
+       Time Signature
+       ========================================= */
+
+    #rhythmLibraryView
+    label {
+
+        font-size: 7px !important;
+
+        margin-bottom: 2px !important;
+    }
+
+
+    #rhythmLibraryView
+    #timeSigSelect {
+
+        height: 32px !important;
+
+        font-size: 8px !important;
+
+        padding: 4px 7px !important;
+
+        border-radius: 8px !important;
+
+        max-width: 125px !important;
+    }
+
+
+    /* =========================================
+       BPM PRESETS
+       ========================================= */
+
+    #rhythmLibraryView
+    button {
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* ปุ่ม BPM 60 65 70 ... */
+
+    #rhythmLibraryView
+    .grid.grid-cols-4 button {
+
+        min-width: 0 !important;
+
+        height: 30px !important;
+
+        padding: 3px !important;
+
+        border-radius: 7px !important;
+
+        font-size: 7px !important;
+    }
+
+
+    /* =========================================
+       Tempo
+       ========================================= */
+
+    #rhythmLibraryView
+    #bpmValue {
+
+        font-size: 8px !important;
+    }
+
+
+    #rhythmLibraryView
+    #bpmSlider {
+
+        height: 3px !important;
+    }
+
+
+    /* =========================================
+       ปุ่ม TAP TEMPO
+       ========================================= */
+
+    #rhythmLibraryView
+    button {
+
+        line-height: 1.2 !important;
+    }
+}
+
+
+/* =========================================================
+   IPHONE / MOBILE เล็ก
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    #rhythmLibraryView {
+
+        padding-top: 78px !important;
+
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+
+
+    #rhythmLibraryView > div {
+
+        padding: 9px !important;
+
+        border-radius: 15px !important;
+    }
+
+
+    #rhythmLibraryView h1 {
+
+        font-size: 18px !important;
+
+        line-height: 1.2 !important;
+    }
+
+
+    #rhythmLibraryView h1 + p {
+
+        font-size: 7px !important;
+    }
+
+
+    #rhythmLibraryView .flex.bg-slate-800 button {
+
+        height: 31px !important;
+
+        font-size: 7px !important;
+
+        padding-left: 3px !important;
+
+        padding-right: 3px !important;
+    }
+
+
+    #rhythmLibraryView
+    #rhythmPlayBtn {
+
+        width: 38px !important;
+
+        height: 38px !important;
+    }
+
+
+    #rhythmLibraryView
+    #rhythmStatusText {
+
+        font-size: 8px !important;
+    }
+
+
+    #rhythmLibraryView
+    #timeSigSelect {
+
+        height: 30px !important;
+
+        font-size: 7px !important;
+    }
+
+
+    #rhythmLibraryView
+    .grid.grid-cols-4 button {
+
+        height: 27px !important;
+
+        font-size: 6px !important;
+    }
+}

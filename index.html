@@ -2508,18 +2508,16 @@ async function initAudio() {
 
         // --- Rhythm Library Audio Engine ---
         let rhythmPlaybackStartTime = 0;
-       async function startRhythmEngine() {
-    await initAudio();
-
-    stopRhythmEngine();
-    preloadPercussionSamples();
-
-    rhythmCurrentStep = 0;
-    rhythmNextNoteTime = audioCtx.currentTime + 0.02;
-    rhythmPlaybackStartTime = rhythmNextNoteTime;
-    rhythmScheduler();
-    startRhythmBeatPulseLoop();
-}
+        function startRhythmEngine() {
+            initAudio();
+            stopRhythmEngine(); // เคลียร์ของเก่าก่อนเริ่มใหม่เสมอ (กันซ้อนเวลาสลับ pattern/mode ระหว่างเล่น)
+            preloadPercussionSamples(); // โหลดไฟล์เสียงจริงแบบ background ไม่รอ (fire-and-forget) — ถ้ายังไม่มีไฟล์ เสียงสังเคราะห์จะเล่นแทนไปก่อนได้ทันที ไม่ต้องหน่วงรอ fetch/404 ก่อนเสียงออก
+            rhythmCurrentStep = 0;
+            rhythmNextNoteTime = audioCtx.currentTime + 0.02; // ลดจาก 0.05 ให้จังหวะที่ 1 ดังเร็วขึ้นทันทีที่กด (0.02s ยังพอกันเสียงเพี้ยนจาก audio thread timing ได้)
+            rhythmPlaybackStartTime = rhythmNextNoteTime;
+            rhythmScheduler();
+            startRhythmBeatPulseLoop();
+        }
 
         function stopRhythmEngine() {
             if (rhythmTimerId) {
