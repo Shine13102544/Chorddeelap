@@ -411,6 +411,27 @@
                     </span>
                     <h1 class="text-3xl font-extrabold text-white">Drum Pad 15 เสียง</h1>
                     <p class="text-slate-300 text-sm mt-1">กดคลิกที่แป้น หรือกดคีย์บอร์ดเพื่อตีกลองตามตัวอักษร</p>
+                    <div class="mt-4">
+    <button
+        id="iosAudioTestBtn"
+        type="button"
+        onclick="testIOSAudio()"
+        class="px-5 py-3 rounded-xl bg-orange-500 text-white font-bold active:scale-95">
+        🔊 ทดสอบเสียง iPhone
+    </button>
+
+    <pre
+        id="iosAudioTestResult"
+        style="
+            margin-top:10px;
+            padding:10px;
+            background:#1f2937;
+            color:#fff;
+            border-radius:10px;
+            font-size:12px;
+            white-space:pre-wrap;
+        ">ยังไม่ได้ทดสอบ</pre>
+</div>
                 </div>
                 
                 <div class="flex gap-3">
@@ -2832,6 +2853,85 @@ window.addEventListener('resize', () => {
     }
 
 });
+async function testIOSAudio() {
+    const output = document.getElementById('iosAudioTestResult');
+
+    function log(message) {
+        output.textContent += message + '\n';
+    }
+
+    output.textContent = '';
+
+    try {
+        log('เริ่มทดสอบ...');
+
+        const AudioContextClass =
+            window.AudioContext || window.webkitAudioContext;
+
+        if (!AudioContextClass) {
+            throw new Error('iPhone ไม่รองรับ Web Audio API');
+        }
+
+        const ctx = new AudioContextClass();
+
+        log('1. AudioContext: ' + ctx.state);
+
+        await ctx.resume();
+
+        log('2. หลัง resume: ' + ctx.state);
+
+        const audioUrl = new URL(
+            'sounds/KICK.wav',
+            window.location.href
+        ).href;
+
+        log('3. URL: ' + audioUrl);
+
+        const response = await fetch(audioUrl, {
+            cache: 'no-store'
+        });
+
+        log('4. HTTP: ' + response.status);
+
+        if (!response.ok) {
+            throw new Error('โหลดไฟล์เสียงไม่ได้ HTTP ' + response.status);
+        }
+
+        const arrayBuffer = await response.arrayBuffer();
+
+        log('5. ขนาดไฟล์: ' + arrayBuffer.byteLength + ' bytes');
+
+        const audioBuffer =
+            await ctx.decodeAudioData(arrayBuffer);
+
+        log(
+            '6. Decode สำเร็จ: ' +
+            audioBuffer.duration.toFixed(3) +
+            ' วินาที'
+        );
+
+        const source = ctx.createBufferSource();
+        const gain = ctx.createGain();
+
+        source.buffer = audioBuffer;
+        gain.gain.value = 1;
+
+        source.connect(gain);
+        gain.connect(ctx.destination);
+
+        source.start(0);
+
+        log('7. ส่งคำสั่งเล่นเสียงแล้ว');
+        log('ถ้าไม่ได้ยิน = ปัญหาอยู่ที่ iOS/Web Audio');
+        
+    } catch (error) {
+        log('❌ ERROR: ' + (
+            error && error.message
+                ? error.message
+                : error
+        ));
+    }
+}
     </script>
 </body>
 </html>
